@@ -86,7 +86,5 @@ cd $HOME/projects
 git clone git@github.com:kristovatlas/osx-config-check.git osxlockdown
 cd osxlockdown
 python app.py
-dialog --clear \
-                --title "ALL FINISHED, ENJOY YOUR NEW DESKTOP & HAPPY CREATING" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH
+dialog --title "FINISHED" \
+--msgbox "\n Installation Completed, Enjoy Your New System" 6 50
