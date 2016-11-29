@@ -17,3 +17,9 @@ echo "installing ohmyzsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 mv $HOME/.zshrc $HOME/.zshrc-backup
 cp ../assets/zshrc $HOME/.zshrc
+echo "installing go"
+brew install go
+echo "installing python3"
+brew install python3
+echo "installing fav fonts"
+cp ../fonts/* /Library/Fonts/
