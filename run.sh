@@ -78,6 +78,8 @@ brew install Caskroom/cask/unetbootin
 echo "installing nodejs..."
 brew install node
 brew install npm
+echo "installing tunnelblick..."
+brew install tunnelblick
 echo "installing all pip packages..."
 sudo pip3 install -R ../requirements.txt
 echo "running osx lockdown checks..."
