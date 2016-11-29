@@ -50,11 +50,13 @@ echo "installing go..."
 brew install go --upgrade
 echo "installing python3..."
 brew install python3 --upgrade
-echo "installing fav fonts"
+echo "installing fav fonts..."
 cp ../fonts/*.ttf /Library/Fonts/
 echo "installing Chromium..."
 brew install Caskroom/cask/chromium
-echo "installing all pip packages"
+echo "installing unetbootin..."
+brew install Caskroom/cask/unetbootin
+echo "installing all pip packages..."
 sudo pip3 install -R ../requirements.txt
 echo "running osx lockdown checks..."
 mkdir $HOME/projects
