@@ -1,4 +1,9 @@
 #!/bin/bash
+echo "installing xcode tools..."
+xcode-select --install
+echo "installing homebrew..."
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install dialog
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
@@ -27,10 +32,6 @@ case $CHOICE in
             exit
             ;;
 esac
-echo "installing xcode tools..."
-xcode-select --install
-echo "installing homebrew..."
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo "installing git..."
 brew install git
 echo "installing cask..."
