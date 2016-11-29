@@ -36,6 +36,18 @@ echo "installing php70 with fpm and mysql"
 brew tap homebrew/dupes && \
   brew tap homebrew/php && \
   brew install --without-apache --with-fpm --with-mysql php70
+echo "installing nginx..."
+brew tap homebrew/nginx && \
+brew install nginx
+echo "making sites-available dirs..."
+  mkdir -p /usr/local/etc/nginx/sites-available && \
+  mkdir -p /usr/local/etc/nginx/sites-enabled && \
+  mkdir -p /usr/local/etc/nginx/conf.d && \
+  mkdir -p /usr/local/etc/nginx/ssl
+echo "installing task warrior"
+brew install task
+brew install taskd
+brew install tasksh
 echo "installing git..."
 brew install git
 echo "installing cask..."
