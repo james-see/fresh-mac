@@ -7,8 +7,8 @@ brew install dialog
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
-BACKTITLE="Backtitle here"
-TITLE="Title here"
+BACKTITLE="FRESH OSX"
+TITLE="INSTALL YOUR BASIC APPS AND CONFIGS AUTOMATICALLY"
 MENU="Choose one of the following options:"
 
 OPTIONS=(1 "Install JC's default OSX setup"
