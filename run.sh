@@ -79,7 +79,9 @@ echo "installing nodejs..."
 brew install node
 brew install npm
 echo "installing tunnelblick..."
-brew install tunnelblick
+brew install Caskroom/cask/tunnelblick
+echo "installing bartender..."
+brew install Caskroom/cask/bartender
 echo "installing all pip packages..."
 sudo pip3 install -R ../requirements.txt
 echo "running osx lockdown checks..."
