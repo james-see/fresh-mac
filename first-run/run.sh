@@ -32,6 +32,8 @@ case $CHOICE in
             exit
             ;;
 esac
+brew tap caskroom/cask
+brew tap homebrew/services
 echo "installing php70 with fpm and mysql"
 brew tap homebrew/dupes && \
   brew tap homebrew/php && \
@@ -50,9 +52,8 @@ brew install taskd
 brew install tasksh
 echo "installing git..."
 brew install git
-echo "installing cask..."
-brew tap caskroom/cask
-brew tap homebrew/services
+echo "installing sublime text..."
+brew install Caskroom/cask/sublime-text
 brew install bash-completion
 echo "installing iterm2..."
 brew install Caskroom/cask/iterm2
@@ -74,6 +75,9 @@ echo "installing Chromium..."
 brew install Caskroom/cask/chromium
 echo "installing unetbootin..."
 brew install Caskroom/cask/unetbootin
+echo "installing nodejs..."
+brew install node
+brew install npm
 echo "installing all pip packages..."
 sudo pip3 install -R ../requirements.txt
 echo "running osx lockdown checks..."
