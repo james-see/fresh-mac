@@ -47,13 +47,15 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 mv $HOME/.zshrc $HOME/.zshrc-backup
 cp ../assets/zshrc $HOME/.zshrc
 echo "installing go..."
-brew install go
+brew install go --upgrade
 echo "installing python3..."
-brew install python3
+brew install python3 --upgrade
 echo "installing fav fonts"
 cp ../fonts/*.ttf /Library/Fonts/
 echo "installing Chromium..."
 brew install Caskroom/cask/chromium
+echo "installing all pip packages"
+sudo pip3 install -R ../requirements.txt
 echo "running osx lockdown checks..."
 mkdir $HOME/projects
 cd $HOME/projects
