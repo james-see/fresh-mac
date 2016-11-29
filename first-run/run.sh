@@ -32,10 +32,16 @@ case $CHOICE in
             exit
             ;;
 esac
+echo "installing php70 with fpm and mysql"
+brew tap homebrew/dupes && \
+  brew tap homebrew/php && \
+  brew install --without-apache --with-fpm --with-mysql php70
 echo "installing git..."
 brew install git
 echo "installing cask..."
 brew tap caskroom/cask
+brew tap homebrew/services
+brew install bash-completion
 echo "installing iterm2..."
 brew install Caskroom/cask/iterm2
 echo "installing gpgtools..."
