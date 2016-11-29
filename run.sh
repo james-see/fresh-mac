@@ -64,13 +64,13 @@ brew install zsh --upgrade
 echo "installing ohmyzsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 mv $HOME/.zshrc $HOME/.zshrc-backup
-cp ../assets/zshrc $HOME/.zshrc
+cp assets/zshrc $HOME/.zshrc
 echo "installing go..."
 brew install go --upgrade
 echo "installing python3..."
 brew install python3 --upgrade
 echo "installing fav fonts..."
-cp ../fonts/*.ttf /Library/Fonts/
+cp fonts/*.ttf /Library/Fonts/
 echo "installing Chromium..."
 brew install Caskroom/cask/chromium
 echo "installing unetbootin..."
