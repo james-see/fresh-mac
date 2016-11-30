@@ -83,7 +83,7 @@ brew install Caskroom/cask/tunnelblick
 echo "installing bartender..."
 brew install Caskroom/cask/bartender
 echo "installing all pip packages..."
-sudo pip3 install -R ../requirements.txt
+cat requirements.txt | sudo xargs -n 1 pip3 install
 echo "running osx lockdown checks..."
 mkdir $HOME/projects
 cd $HOME/projects
