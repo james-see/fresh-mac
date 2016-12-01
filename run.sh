@@ -1,7 +1,12 @@
 #!/bin/bash
 echo "installing xcode tools..."
 xcode-select --install
-echo "installing homebrew..."
+echo "checking and installing homebrew as necessary..."
+    if which brew 2>/dev/null; then
+        echo "brew already installed, skipping..."
+    else
+        echo "brew not found, installing now..."
+    fi
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install dialog
 HEIGHT=12
