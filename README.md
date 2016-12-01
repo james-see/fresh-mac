@@ -8,11 +8,19 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 
 ## INCLUDED
 
-HOMEBREW   
+HOMEBREW  
+TASKWARRIOR 
+UNETBOOTIN  
+TUNNELBLICK 
+BARTENDER 
 CHROMIUM  
 ZSH & OH-MY-ZSH 
+PHP-FPM 
+NGINX 
+MYSQL 
+GPG TOOLS 
+NODE / NPM  
 PYTHON3 & PIP 
-GIT (OBVIOUSLY) 
 lots of pypi packages 
 TOR (config in /usr/local/etc/tor/) 
 PRIVOXY (brew services start privoxy, running at 127.0.0.1:8118)
