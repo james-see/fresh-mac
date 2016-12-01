@@ -9,7 +9,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 ## INCLUDED
 
 HOMEBREW  
-TASKWARRIOR 
+TASKWARRIOR          
 IMAGEMAGICK         
 UNETBOOTIN  
 TUNNELBLICK 
