@@ -11,8 +11,13 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 HOMEBREW   
 CHROMIUM  
 ZSH & OH-MY-ZSH 
-PYTHON3 & PIP
-GIT (OBVIOUSLY)
+PYTHON3 & PIP 
+GIT (OBVIOUSLY) 
+lots of pypi packages 
+TOR (config in /usr/local/etc/tor/) 
+PRIVOXY (brew services start privoxy, running at 127.0.0.1:8118)
+HTOP (for viewing processes / memory / cores) 
+TMUX (like screens but better in every way) 
 
 ## HOW TO CONTRIBUTE
 
