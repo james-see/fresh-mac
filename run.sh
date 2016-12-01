@@ -4,8 +4,8 @@ xcode-select --install
 echo "installing homebrew..."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install dialog
-HEIGHT=15
-WIDTH=40
+HEIGHT=12
+WIDTH=45
 CHOICE_HEIGHT=4
 BACKTITLE="FRESH OSX - GET STARTED RIGHT BY JAMES CAMPBELL"
 TITLE="INSTALL YOUR BASIC SETUP NOW"
