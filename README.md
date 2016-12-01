@@ -10,6 +10,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 
 HOMEBREW  
 TASKWARRIOR 
+IMAGEMAGICK         
 UNETBOOTIN  
 TUNNELBLICK 
 BARTENDER 
@@ -23,8 +24,8 @@ GPG TOOLS
 NODE / NPM      
 PYTHON3 & PIP   
 lots of pypi packages  
-TOR (config in /usr/local/etc/tor/)     
-PRIVOXY (brew services start privoxy, running at 127.0.0.1:8118)    
+TOR (brew services start tor, config in /usr/local/etc/tor/, running at 127.0.0.1:9050)     
+PRIVOXY (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)    
 HTOP (for viewing processes / memory / cores)   
 TMUX (like screens but better in every way)       
 
