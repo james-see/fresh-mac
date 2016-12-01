@@ -114,10 +114,10 @@ stt_tab   () { setTerminalText 1 $@; }
 stt_title () { setTerminalText 2 $@; }
 
 alias retor="pidof tor | xargs sudo kill -HUP"
-export PATH=/usr/local/share/python:$PATH
+#export PATH=/usr/local/share/python:$PATH outdated according to latest homebrew
 export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:/usr/local/Cellar/python3/3.5.2/Frameworks/Python.framework/Versions/3.5/bin/
-export PATH=$PATH:/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/bin/
+export PATH=$PATH:/usr/local/Cellar/python3/3.5.2/Frameworks/Python.framework/Versions/3.5/bin
+export PATH=$PATH:/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/bin
 
 export PATH="/usr/local/sbin:$PATH"
 
