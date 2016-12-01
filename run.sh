@@ -87,8 +87,12 @@ echo "installing htop..."
 brew install htop
 echo "installing tmux..."
 brew install tmux
+echo "installing imagemagick..."
+brew install imagemagick
 echo "installing tunnelblick..."
 brew install Caskroom/cask/tunnelblick
+echo "installing Panic's Coda..."
+brew install Caskroom/cask/coda
 echo "installing bartender..."
 brew install Caskroom/cask/bartender
 echo "installing all pip packages..."
