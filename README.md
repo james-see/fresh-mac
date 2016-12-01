@@ -15,6 +15,7 @@ TUNNELBLICK
 BARTENDER 
 CHROMIUM  
 ZSH & OH-MY-ZSH     
+(BARTENDER)[https://www.macbartender.com]       
 PHP-FPM     
 NGINX   
 MYSQL   
