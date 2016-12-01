@@ -6,8 +6,8 @@ echo "checking and installing homebrew as necessary..."
         echo "brew already installed, skipping..."
     else
         echo "brew not found, installing now..."
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install dialog
 HEIGHT=12
 WIDTH=45
