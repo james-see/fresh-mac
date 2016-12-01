@@ -14,18 +14,18 @@ UNETBOOTIN
 TUNNELBLICK 
 BARTENDER 
 CHROMIUM  
-ZSH & OH-MY-ZSH 
-PHP-FPM 
-NGINX 
-MYSQL 
-GPG TOOLS 
-NODE / NPM  
-PYTHON3 & PIP 
-lots of pypi packages 
-TOR (config in /usr/local/etc/tor/) 
-PRIVOXY (brew services start privoxy, running at 127.0.0.1:8118)
-HTOP (for viewing processes / memory / cores) 
-TMUX (like screens but better in every way) 
+ZSH & OH-MY-ZSH     
+PHP-FPM     
+NGINX   
+MYSQL   
+GPG TOOLS   
+NODE / NPM      
+PYTHON3 & PIP   
+lots of pypi packages  
+TOR (config in /usr/local/etc/tor/)     
+PRIVOXY (brew services start privoxy, running at 127.0.0.1:8118)    
+HTOP (for viewing processes / memory / cores)   
+TMUX (like screens but better in every way)       
 
 ## HOW TO CONTRIBUTE
 
