@@ -78,6 +78,10 @@ brew install Caskroom/cask/unetbootin
 echo "installing nodejs..."
 brew install node
 brew install npm
+echo "installing htop..."
+brew install htop
+echo "installing tmux..."
+brew install tmux
 echo "installing tunnelblick..."
 brew install Caskroom/cask/tunnelblick
 echo "installing bartender..."
