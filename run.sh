@@ -83,6 +83,10 @@ brew install Caskroom/cask/unetbootin
 echo "installing nodejs..."
 brew install node
 brew install npm
+echo "installing charles..."
+brew install Caskroom/cask/charles
+echo "installing little snitch..."
+brew install Caskroom/cask/little-snitch
 echo "installing htop..."
 brew install htop
 echo "installing tmux..."
