@@ -83,6 +83,8 @@ brew install Caskroom/cask/unetbootin
 echo "installing nodejs..."
 brew install node
 brew install npm
+echo "installing hgrep from npm..."
+npm install -g hgrep
 echo "installing charles..."
 brew install Caskroom/cask/charles
 echo "installing little snitch..."
