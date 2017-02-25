@@ -103,6 +103,10 @@ echo "installing bartender..."
 brew install Caskroom/cask/bartender
 echo "installing all pip packages..."
 cat requirements.txt | sudo xargs -n 1 pip3 install
+echo "changing default screenshot location to ~/Documents/Screenshots"
+mkdir $HOME/Documents/Screenshots
+defaults write com.apple.screencapture location ~/Documents/Screenshots
+killall SystemUIServer
 echo "running osx lockdown checks..."
 mkdir $HOME/projects
 cd $HOME/projects
