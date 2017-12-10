@@ -9,6 +9,7 @@ echo "checking and installing homebrew as necessary..."
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
 brew install dialog
+brew analytics off
 HEIGHT=12
 WIDTH=45
 CHOICE_HEIGHT=4
@@ -110,8 +111,26 @@ killall SystemUIServer
 echo "running osx lockdown checks..."
 mkdir $HOME/projects
 cd $HOME/projects
-git clone git@github.com:kristovatlas/osx-config-check.git osxlockdown
-cd osxlockdown
-python app.py
+echo "turning on fulldisk encryption..."
+sudo fdesetup enable
+echo "evicting filevault keys from memory at sleep..."
+sudo pmset -a destroyfvkeyonstandby 1
+echo "enforcing hibernation..."
+sudo pmset -a hibernatemode 25
+echo "modifying standby and nap settings..."
+sudo pmset -a powernap 0
+sudo pmset -a standby 0
+sudo pmset -a standbydelay 0
+sudo pmset -a autopoweroff 0
+echo "enabling the firewall and stealth node..."
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+echo "turning off auto-allowing signed apps from popping through firewall..."
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
+sudo pkill -HUP socketfilterfw
+# git clone git@github.com:kristovatlas/osx-config-check.git osxlockdown
+# cd osxlockdown
+# python app.py
 dialog --title "FINISHED" \
 --msgbox "\n Installation Completed, Enjoy Your New System" 6 50
