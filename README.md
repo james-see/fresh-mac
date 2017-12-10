@@ -12,8 +12,7 @@ HOMEBREW
 TASKWARRIOR          
 IMAGEMAGICK         
 UNETBOOTIN  
-TUNNELBLICK  
-BARTENDER  
+TUNNELBLICK   
 CHROMIUM  
 ZSH & OH-MY-ZSH     
 [BARTENDER](https://www.macbartender.com)         
