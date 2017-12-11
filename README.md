@@ -13,7 +13,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 [CHROMIUM](https://www.chromium.org/)  
 [ZSH](https://www.zsh.org/) & [OH-MY-ZSH](http://ohmyz.sh/)     
 [GPG TOOLS](https://gpgtools.org/)   
-TOR (brew services start tor, config in /usr/local/etc/tor/, running at 127.0.0.1:9050)     
+[TOR](https://www.torproject.org/download/download.html.en) (brew services start tor, config in /usr/local/etc/tor/, running at 127.0.0.1:9050)     
 [PRIVOXY](http://www.privoxy.org/) (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)    
 [PYTHON 3 & PIP](https://www.python.org/)     
 lots of python libraries via requirements.txt   
@@ -29,12 +29,12 @@ ALL OF CORE PLUS:
 [ETCHER](https://etcher.io/)   
 [BARTENDER](https://www.macbartender.com)   
 [CODA](https://www.panic.com/coda/)
-PHP-FPM      
-NGINX   
-MYSQL   
-NODE / NPM         
-HTOP   
-TMUX   
+[PHP-FPM](https://php-fpm.org/download/)      
+[NGINX](https://nginx.org/en/download.html)   
+[MYSQL](https://dev.mysql.com/downloads/)   
+[NODE](https://nodejs.org/en/download/) / [NPM](https://www.npmjs.com/package/download)         
+[HTOP](http://hisham.hm/htop/)   
+[TMUX](https://github.com/tmux/tmux/wiki)   
 
 ## HOW TO CONTRIBUTE
 
