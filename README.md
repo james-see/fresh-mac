@@ -8,18 +8,18 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 
 ## INCLUDED
 
-HOMEBREW  
+[HOMEBREW](https://brew.sh)  
 [TASKWARRIOR](https://taskwarrior.org/)          
 [IMAGEMAGICK](https://www.imagemagick.org/script/index.php)         
-ETCHER  
+[ETCHER](https://etcher.io/)  
 [TUNNELBLICK](https://www.tunnelblick.net/)   
-CHROMIUM  
+[CHROMIUM](https://www.chromium.org/)  
 ZSH & OH-MY-ZSH     
 [BARTENDER](https://www.macbartender.com)         
 PHP-FPM     
 NGINX   
 MYSQL   
-GPG TOOLS   
+[GPG TOOLS](https://gpgtools.org/)   
 NODE / NPM      
 PYTHON3 & PIP   
 lots of pypi packages  
