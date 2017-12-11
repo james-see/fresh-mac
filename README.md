@@ -11,11 +11,11 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 [HOMEBREW](https://brew.sh)  
 [TUNNELBLICK](https://www.tunnelblick.net/)   
 [CHROMIUM](https://www.chromium.org/)  
-ZSH & OH-MY-ZSH     
+[ZSH](https://www.zsh.org/) & [OH-MY-ZSH](http://ohmyz.sh/)     
 [GPG TOOLS](https://gpgtools.org/)   
 TOR (brew services start tor, config in /usr/local/etc/tor/, running at 127.0.0.1:9050)     
-PRIVOXY (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)    
-PYTHON 3 & PIP     
+[PRIVOXY](http://www.privoxy.org/) (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)    
+[PYTHON 3 & PIP](https://www.python.org/)     
 lots of python libraries via requirements.txt   
 LOCK DOWN FIREWALL   
 TURN ON FULL DISK ENCRYPTION   
