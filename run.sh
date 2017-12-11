@@ -19,7 +19,7 @@ MENU="Choose one of the following options:"
 
 OPTIONS=(1 "Install JC's OSX setup (batteries included)"
          2 "Install the lite core version with just the basics"
-         3 "Quit now (too afraid)")
+         3 "Quit now (too afraid?)")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -41,7 +41,7 @@ case $CHOICE in
             echo "You chose Option 2"
             $lighter = true;
         3)
-            echo "You chose Option 2, goodbye."
+            echo "You chose Option 3, goodbye."
             exit
             ;;
 esac
