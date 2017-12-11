@@ -27,7 +27,8 @@ ALL OF CORE PLUS:
 [TASKWARRIOR](https://taskwarrior.org/)          
 [IMAGEMAGICK](https://www.imagemagick.org/script/index.php)         
 [ETCHER](https://etcher.io/)   
-[BARTENDER](https://www.macbartender.com)    
+[BARTENDER](https://www.macbartender.com)   
+[CODA](https://www.panic.com/coda/)
 PHP-FPM      
 NGINX   
 MYSQL   
