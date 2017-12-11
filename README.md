@@ -20,9 +20,9 @@ PRIVOXY (brew services start privoxy, config in /usr/local/etc/privoxy/, running
 
 [TASKWARRIOR](https://taskwarrior.org/)          
 [IMAGEMAGICK](https://www.imagemagick.org/script/index.php)         
-[ETCHER](https://etcher.io/)
-[BARTENDER](https://www.macbartender.com) 
-PHP-FPM     
+[ETCHER](https://etcher.io/)   
+[BARTENDER](https://www.macbartender.com)    
+PHP-FPM      
 NGINX   
 MYSQL   
 NODE / NPM      
