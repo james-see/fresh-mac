@@ -116,6 +116,8 @@ cat requirements.txt | sudo xargs -n 1 pip3 install
 echo "fixing DNS to encrypt all of your dns resolver lookups"   
 brew install dnsmasq
 brew install dnscrypt-proxy
+brew install privoxy
+brew services start privoxy
 echo "turning off captive control when searching for wifi networks"   
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 echo "changing default screenshot location to ~/Documents/Screenshots"
