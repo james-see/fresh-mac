@@ -118,6 +118,7 @@ brew install dnsmasq
 brew install dnscrypt-proxy
 brew install privoxy
 brew services start privoxy
+sudo networksetup -setwebproxy "Wi-Fi" 127.0.0.1 8118
 echo "turning off captive control when searching for wifi networks"   
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 echo "changing default screenshot location to ~/Documents/Screenshots"
