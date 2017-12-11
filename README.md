@@ -14,12 +14,12 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 ZSH & OH-MY-ZSH     
 [GPG TOOLS](https://gpgtools.org/)   
 TOR (brew services start tor, config in /usr/local/etc/tor/, running at 127.0.0.1:9050)     
-PRIVOXY (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118) 
-PYTHON 3 & PIP   
-lots of python libraries via requirements.txt
-LOCK DOWN FIREWALL
-TURN ON FULL DISK ENCRYPTION
-DUMP FULL DISK ENCRYPTION KEY OUT OF MEMORY ON SLEEP
+PRIVOXY (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)    
+PYTHON 3 & PIP     
+lots of python libraries via requirements.txt   
+LOCK DOWN FIREWALL   
+TURN ON FULL DISK ENCRYPTION   
+DUMP FULL DISK ENCRYPTION KEY OUT OF MEMORY ON SLEEP    
 
 ## INCLUDED BATTERIES INCLUDED
 
