@@ -9,9 +9,9 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 ## INCLUDED
 
 HOMEBREW  
-TASKWARRIOR          
-IMAGEMAGICK         
-UNETBOOTIN  
+[TASKWARRIOR](https://taskwarrior.org/)          
+[IMAGEMAGICK](https://www.imagemagick.org/script/index.php)         
+ETCHER  
 TUNNELBLICK   
 CHROMIUM  
 ZSH & OH-MY-ZSH     
