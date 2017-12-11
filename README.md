@@ -34,4 +34,5 @@ Fork it and issue a pull request!
 
 ## FUTURE PLANS
 
+Adding a lite option that doesn't include php-fpm nginx mysql etcher taskwarrior node npm python3 pip htop tmux
 Adding an ansible version instead of pure BASH.
