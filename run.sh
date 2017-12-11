@@ -30,6 +30,8 @@ CHOICE=$(dialog --clear \
                 2>&1 >/dev/tty)
 
 clear
+$full = false; # sensible default
+$lighter = true; # sensible default
 case $CHOICE in
         1)
             echo "You chose Option 1"
