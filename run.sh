@@ -48,36 +48,27 @@ esac
 brew tap caskroom/cask
 brew tap homebrew/services
 if [ "$full" = true ] ; then
-    echo "installing php70 with fpm and mysql"
-    brew tap homebrew/dupes && \
-    brew tap homebrew/php && \
-    brew install --without-apache --with-fpm --with-mysql php70
     echo "installing nginx..."
-    brew tap homebrew/nginx && \
     brew install nginx
-    echo "making sites-available dirs..."
-    mkdir -p /usr/local/etc/nginx/sites-available && \
-    mkdir -p /usr/local/etc/nginx/sites-enabled && \
-    mkdir -p /usr/local/etc/nginx/conf.d && \
-    mkdir -p /usr/local/etc/nginx/ssl
     echo "installing task warrior"
     brew install task
     brew install taskd
     brew install tasksh
     echo "installing git..."
     brew install git
-    echo "installing sublime text..."
-    brew install Caskroom/cask/sublime-text
-    brew install bash-completion
+    echo "installing vs code..."
+    brew cask install visual-studio-code
     echo "installing nodejs..."
     brew install node
     brew install npm
-    echo "installing hgrep from npm..."
+    echo "install ripgrep because it is 10x faster than grep..."
+    brew install ripgrep
+    echo "installing hgrep from npm to do nice etl parsing..."
     npm install -g hgrep
     echo "installing charles..."
-    brew install Caskroom/cask/charles
+    brew cask install charles
     echo "installing little snitch..."
-    brew install Caskroom/cask/little-snitch
+    brew cask install little-snitch
     echo "installing htop..."
     brew install htop
     echo "installing tmux..."
@@ -85,14 +76,14 @@ if [ "$full" = true ] ; then
     echo "installing imagemagick..."
     brew install imagemagick
     echo "installing Panic's Coda..."
-    brew install Caskroom/cask/coda
+    brew cask install coda
     echo "installing bartender..."
-    brew install Caskroom/cask/bartender
+    brew cask install bartender
 fi
 echo "installing iterm2..."
-brew install Caskroom/cask/iterm2
+brew cask install iterm2
 echo "installing gpgtools..."
-brew install Caskroom/cask/gpgtools
+brew cask install gpgtools
 echo "installing zsh..."
 brew install zsh --upgrade
 echo "installing ohmyzsh..."
@@ -106,11 +97,11 @@ brew install python3 --upgrade
 echo "installing fav fonts..."
 cp fonts/*.ttf /Library/Fonts/
 echo "installing Chromium..."
-brew install Caskroom/cask/chromium
+brew cask install chromium
 echo "installing etcher..."
-brew install Caskroom/cask/etcher
+brew cask install etcher
 echo "installing tunnelblick..."
-brew install Caskroom/cask/tunnelblick
+brew cask install tunnelblick
 echo "installing all pip packages..."
 cat requirements.txt | sudo xargs -n 1 pip3 install
 echo "fixing DNS to encrypt all of your dns resolver lookups"   
