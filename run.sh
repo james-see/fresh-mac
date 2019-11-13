@@ -30,8 +30,8 @@ CHOICE=$(dialog --clear \
 2>&1 >/dev/tty)
 
 clear
-$full = false; # sensible default
-$lighter = true; # sensible default
+full=false; # sensible default
+lighter=true; # sensible default
 case $CHOICE in
     1)
         echo "You chose Option 1"
@@ -40,10 +40,11 @@ case $CHOICE in
     2)
         echo "You chose Option 2"
         $lighter = true;
-        3)
-            echo "You chose Option 3, goodbye."
-            exit
-        ;;
+    ;;
+    3)
+        echo "You chose Option 3, goodbye."
+        exit
+    ;;
 esac
 brew tap caskroom/cask
 brew tap homebrew/services
@@ -58,9 +59,10 @@ if [ "$full" = true ] ; then
     brew install git
     echo "installing vs code..."
     brew cask install visual-studio-code
-    echo "installing nodejs..."
+    echo "installing nodejs and npm and nvm..."
     brew install node
     brew install npm
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
     echo "install ripgrep because it is 10x faster than grep..."
     brew install ripgrep
     echo "installing hgrep from npm to do nice etl parsing..."
@@ -79,7 +81,18 @@ if [ "$full" = true ] ; then
     brew cask install coda
     echo "installing bartender..."
     brew cask install bartender
+    echo "installing docker..."
+    brew cask install docker
+    echo "installing docker completions..."
+    brew install bash-completion
+    brew install docker-completion
+    brew install docker-compose-completion
+    brew install docker-machine-completion
+    echo "installing virtualbox..."
+    brew cask install virtualbox
 fi
+echo "install ruby version manager and rails..."
+curl -sSL https://get.rvm.io | bash -s stable --rails
 echo "installing nerd fonts..."
 brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
@@ -101,6 +114,9 @@ echo "installing fav fonts..."
 cp fonts/*.ttf /Library/Fonts/
 echo "installing Chromium..."
 brew cask install chromium
+echo "installing defaultbrowser tool and setting default to Chromium..."
+brew install defaultbrowser
+defaultbrowser chromium
 echo "installing etcher..."
 brew cask install etcher
 echo "installing tunnelblick..."
