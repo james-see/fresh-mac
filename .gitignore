@@ -86,3 +86,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# IDE bs
+.vscode/
+.vs-code/
