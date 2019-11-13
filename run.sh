@@ -2,12 +2,12 @@
 echo "installing xcode tools..."
 xcode-select --install
 echo "checking and installing homebrew as necessary..."
-    if which brew 2>/dev/null; then
-        echo "brew already installed, skipping..."
-    else
-        echo "brew not found, installing now..."
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
+if which brew 2>/dev/null; then
+    echo "brew already installed, skipping..."
+else
+    echo "brew not found, installing now..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 brew install dialog
 brew analytics off
 HEIGHT=12
@@ -18,32 +18,32 @@ TITLE="INSTALL YOUR BASIC SETUP NOW"
 MENU="Choose one of the following options:"
 
 OPTIONS=(1 "Install JC's OSX setup (batteries included)"
-         2 "Install the lite core version with just the basics"
-         3 "Quit now (too afraid?)")
+    2 "Install the lite core version with just the basics"
+3 "Quit now (too afraid?)")
 
 CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
+    --backtitle "$BACKTITLE" \
+    --title "$TITLE" \
+    --menu "$MENU" \
+    $HEIGHT $WIDTH $CHOICE_HEIGHT \
+    "${OPTIONS[@]}" \
+2>&1 >/dev/tty)
 
 clear
 $full = false; # sensible default
 $lighter = true; # sensible default
 case $CHOICE in
-        1)
-            echo "You chose Option 1"
-            $full = true;
-            ;;
-        2)
-            echo "You chose Option 2"
-            $lighter = true;
+    1)
+        echo "You chose Option 1"
+        $full = true;
+    ;;
+    2)
+        echo "You chose Option 2"
+        $lighter = true;
         3)
             echo "You chose Option 3, goodbye."
             exit
-            ;;
+        ;;
 esac
 brew tap caskroom/cask
 brew tap homebrew/services
@@ -80,6 +80,9 @@ if [ "$full" = true ] ; then
     echo "installing bartender..."
     brew cask install bartender
 fi
+echo "installing nerd fonts..."
+brew tap homebrew/cask-fonts
+brew cask install font-hack-nerd-font
 echo "installing iterm2..."
 brew cask install iterm2
 echo "installing gpgtools..."
@@ -104,13 +107,13 @@ echo "installing tunnelblick..."
 brew cask install tunnelblick
 echo "installing all pip packages..."
 cat requirements.txt | sudo xargs -n 1 pip3 install
-echo "fixing DNS to encrypt all of your dns resolver lookups"   
+echo "fixing DNS to encrypt all of your dns resolver lookups"
 brew install dnsmasq
 brew install dnscrypt-proxy
 brew install privoxy
 brew services start privoxy
 sudo networksetup -setwebproxy "Wi-Fi" 127.0.0.1 8118
-echo "turning off captive control when searching for wifi networks"   
+echo "turning off captive control when searching for wifi networks"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 echo "changing default screenshot location to ~/Documents/Screenshots"
 mkdir $HOME/Documents/Screenshots
