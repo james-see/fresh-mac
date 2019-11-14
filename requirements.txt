@@ -70,7 +70,8 @@ mkdocs-bootswatch
 modulegraph
 more-itertools
 msgpack-python
-mysql-python
+PyMySQL
+mysqlclient
 ndg-httpsclient
 neovim
 netaddr
@@ -108,7 +109,6 @@ PyFileSec
 pyflakes
 Pygments
 PyInstaller
-PyMySQL
 pyOpenSSL
 PyPDF2
 Pyphen
