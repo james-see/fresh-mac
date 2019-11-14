@@ -55,6 +55,7 @@ ALL OF CORE PLUS:
 - ELM
 - VIRTUALBOX
 - DOCKER
+- [SPECTACLE](https://www.spectacleapp.com/)
 
 ## HOW TO CONTRIBUTE
 
