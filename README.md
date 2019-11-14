@@ -5,7 +5,7 @@ _a collection of setup scripts &amp; default app installer for a fresh Mac OS in
 
 ## HOW TO RUN
 
-Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then `cd fresh-osx` and then `python installer.py` and you are done.
+Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then `cd fresh-osx` and then `python installer.py` and you are done. Once it is complete you can `cp configs/zshrc ~/.zshrc` and then `source ~/.zshrc` to get my exact zsh config and theme working.
 
 ## INCLUDED CORE (lite setup)
 
