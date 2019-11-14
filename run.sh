@@ -92,6 +92,8 @@ if [ "$full" = true ] ; then
     echo "now installing haskell via ghcup and haskellstack..."
     curl https://get-ghcup.haskell.org -sSf | sh
     curl -sSL https://get.haskellstack.org/ | sh
+    echo "now installing spectacle window manager..."
+    brew cask install spectacle
 fi
 echo "Installing lib dependancies for python packages..."
 brew install libxml2 libxslt
