@@ -30,6 +30,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 - TREE for pretty dirs and files list views
 - GOLANG
 - RVM to manage ruby versions
+- SET default browser to Chromium
 
 
 ## INCLUDED BATTERIES INCLUDED
