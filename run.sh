@@ -162,7 +162,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
 sudo pkill -HUP socketfilterfw
 dialog --title "FINISHED" \
---msgbox "\n Installation Completed, Enjoy Your New System\nInstalling zsh as final step" 6 70
+--msgbox "\n Installation Completed, Enjoy \nYour New System\nInstalling zsh as final step" 12 70
 echo "installing zsh..."
 brew install zsh --upgrade
 echo "installing ohmyzsh..."
