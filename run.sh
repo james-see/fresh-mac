@@ -35,11 +35,11 @@ lighter=true; # sensible default
 case $CHOICE in
     1)
         echo "You chose Option 1, good for you!"
-        $full = true;
+        full=true;
     ;;
     2)
         echo "You chose Option 2, the basics..."
-        $lighter = true;
+        lighter=true;
     ;;
     3)
         echo "You chose Option 3, goodbye."
@@ -50,7 +50,7 @@ brew tap homebrew/services
 if [ "$full" = true ] ; then
     echo "installing nginx..."
     brew install nginx --HEAD
-    echo "installing task warrior"
+    echo "installing task warrior..."
     brew install task
     brew install taskd
     brew install tasksh
