@@ -5,8 +5,8 @@ import sys
 from subprocess import call
 call(["chmod", "a+x", "run.sh"])
 call(["./run.sh"])
-mv $HOME/.zshrc $HOME/.zshrc-backup
-cp. / configs / zshrc $ HOME / .zshrc
+call(["mv", "$HOME/.zshrc", "$HOME/.zshrc-backup"])
+call(["cp", "./configs/zshrc", "$HOME/.zshrc"])
 print("setting up the new zshrc")
 call(["exec", "zsh"])
 exit("finis")
