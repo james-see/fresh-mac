@@ -18,10 +18,19 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 - [PRIVOXY](http://www.privoxy.org/) (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)
 - [PYTHON 3 & PIP](https://www.python.org/)
 - lots of python libraries via requirements.txt
+- DNSCRYPT for secure DNS lookups
+- WIPE profile image to default
 - LOCK DOWN FIREWALL
 - TURN ON FULL DISK ENCRYPTION
 - DUMP FULL DISK ENCRYPTION KEY OUT OF MEMORY ON SLEEP
 - [NERD-FONTS](https://github.com/ryanoasis/nerd-fonts)
+- BAT for cat (aliased)
+- EXA for ls (aliased)
+- JQ for pretty print json and sanity
+- TREE for pretty dirs and files list views
+- GOLANG
+- RVM to manage ruby versions
+
 
 ## INCLUDED BATTERIES INCLUDED
 
@@ -38,6 +47,13 @@ ALL OF CORE PLUS:
 - [NODE](https://nodejs.org/en/download/) / [NPM](https://www.npmjs.com/package/download)
 - [HTOP](http://hisham.hm/htop/)
 - [TMUX](https://github.com/tmux/tmux/wiki)
+- CHARLES
+- LITTLE SNITCH
+- HASKELL
+- ELIXIR
+- ELM
+- VIRTUALBOX
+- DOCKER
 
 ## HOW TO CONTRIBUTE
 
