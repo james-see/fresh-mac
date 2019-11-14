@@ -54,10 +54,6 @@ if [ "$full" = true ] ; then
     brew install task
     brew install taskd
     brew install tasksh
-    echo "installing git..."
-    brew install git
-    echo "installing vs code..."
-    brew cask install visual-studio-code
     echo "installing nodejs and npm and nvm..."
     brew install node
     brew install npm
@@ -90,6 +86,9 @@ if [ "$full" = true ] ; then
     echo "installing virtualbox..."
     brew cask install virtualbox
 fi
+echo "Installing lib dependancies for python packages..."
+brew install libxml2 libxslt
+brew install libtiff libjpeg webp little-cms2
 echo "installing bat as replacement for cat..."
 brew install bat
 echo "install exa as replacement for ls..."

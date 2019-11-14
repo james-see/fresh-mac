@@ -11,6 +11,7 @@ bs4
 cairocffi
 CairoSVG
 certauth
+certifi
 cffi
 chardet
 click
@@ -26,8 +27,11 @@ docopt
 docutils
 ecdsa
 eventlet
+elasticsearch
 ExifRead
 falcon
+feedfinder2
+feedparser
 Flask
 flickrapi
 fpdf
@@ -49,6 +53,7 @@ IPTCInfo
 IPTCInfo3
 iptools
 itsdangerous
+jieba3k
 Jinja2
 jsonrpclib
 kik
@@ -72,6 +77,7 @@ mysqlclient
 ndg-httpsclient
 neovim
 netaddr
+newsapi-python
 nltk
 nose
 numpy
@@ -135,6 +141,7 @@ simplejson
 six
 slowaes
 snowballstemmer
+soupsieve
 Sphinx
 spry
 stevedore
@@ -143,11 +150,13 @@ tabulate
 termcolor
 textblob
 tinycss
+tinysegmenter
 tldextract
 tornado
 tqdm
 twine
 url
+urllib3
 warcprox
 warctools
 wcwidth
@@ -162,3 +171,5 @@ wigle
 XlsxWriter
 xmlutils
 youtube-dl
+newspaper3k
+
