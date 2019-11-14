@@ -40,7 +40,7 @@ ALL OF CORE PLUS:
 - [TASKWARRIOR](https://taskwarrior.org/)
 - [IMAGEMAGICK](https://www.imagemagick.org/script/index.php)
 - [ETCHER](https://etcher.io/)
-- [BARTENDER](https://www.macbartender.com)
+- [BARTENDER](https://www.macbartender.com) requires license but worth it IMO
 - [CODA](https://www.panic.com/coda/)
 - [PHP-FPM](https://php-fpm.org/download/)
 - [NGINX](https://nginx.org/en/download.html)
@@ -48,8 +48,8 @@ ALL OF CORE PLUS:
 - [NODE](https://nodejs.org/en/download/) / [NPM](https://www.npmjs.com/package/download)
 - [HTOP](http://hisham.hm/htop/)
 - [TMUX](https://github.com/tmux/tmux/wiki)
-- CHARLES
-- LITTLE SNITCH
+- [CHARLES](https://www.charlesproxy.com/) requires one time license
+- [LITTLE SNITCH](https://www.obdev.at/products/littlesnitch/index.html) requires one time license
 - HASKELL
 - ELIXIR
 - ELM
