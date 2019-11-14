@@ -11,14 +11,14 @@ fi
 brew install dialog
 brew analytics off
 HEIGHT=12
-WIDTH=45
+WIDTH=55
 CHOICE_HEIGHT=4
-BACKTITLE="FRESH OSX - GET STARTED RIGHT BY JAMES CAMPBELL"
+BACKTITLE="FRESH MAC - GET STARTED RIGHT BY JAMES CAMPBELL"
 TITLE="INSTALL YOUR BASIC SETUP NOW"
 MENU="Choose one of the following options:"
 
-OPTIONS=(1 "Install JC's OSX setup (batteries included)"
-    2 "Install the lite core version with just the basics"
+OPTIONS=(1 "Install JC's MAC setup (batteries included)"
+    2 "Install the lite version with just the basics"
 3 "Quit now (too afraid?)")
 
 CHOICE=$(dialog --clear \
@@ -34,11 +34,11 @@ full=false; # sensible default
 lighter=true; # sensible default
 case $CHOICE in
     1)
-        echo "You chose Option 1"
+        echo "You chose Option 1, good for you!"
         $full = true;
     ;;
     2)
-        echo "You chose Option 2"
+        echo "You chose Option 2, the basics..."
         $lighter = true;
     ;;
     3)
@@ -49,7 +49,7 @@ esac
 brew tap homebrew/services
 if [ "$full" = true ] ; then
     echo "installing nginx..."
-    brew install nginx
+    brew install nginx --HEAD
     echo "installing task warrior"
     brew install task
     brew install taskd
@@ -90,6 +90,10 @@ if [ "$full" = true ] ; then
     echo "installing virtualbox..."
     brew cask install virtualbox
 fi
+echo "installing bat as replacement for cat..."
+brew install bat
+echo "install exa as replacement for ls..."
+brew install exa
 echo "installing visual studio code"
 brew cask install visual-studio-code
 echo "install ruby version manager and rails..."
@@ -127,7 +131,7 @@ brew services start privoxy
 sudo networksetup -setwebproxy "Wi-Fi" 127.0.0.1 8118
 echo "turning off captive control when searching for wifi networks"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
-echo "changing default screenshot location to ~/Documents/Screenshots"
+echo "changing default screenshot location to ~/Documents/Screenshots because desktop screenshots suck..."
 mkdir $HOME/Documents/Screenshots
 defaults write com.apple.screencapture location ~/Documents/Screenshots
 killall SystemUIServer
@@ -140,7 +144,7 @@ echo "evicting filevault keys from memory at sleep..."
 sudo pmset -a destroyfvkeyonstandby 1
 echo "enforcing hibernation..."
 sudo pmset -a hibernatemode 25
-echo "modifying standby and nap settings..."
+echo "modifying standby and nap settings, turning off powernap etc..."
 sudo pmset -a powernap 0
 sudo pmset -a standby 0
 sudo pmset -a standbydelay 0
@@ -148,12 +152,14 @@ sudo pmset -a autopoweroff 0
 echo "enabling the firewall and stealth node..."
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+echo "removing any personalized user photo..."
+sudo dscl . delete /Users/$USER jpegphoto
 echo "turning off auto-allowing signed apps from popping through firewall..."
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
 sudo pkill -HUP socketfilterfw
 dialog --title "FINISHED" \
---msgbox "\n Installation Completed, Enjoy Your New System\nInstalling zsh as final step" 6 50
+--msgbox "\n Installation Completed, Enjoy Your New System\nInstalling zsh as final step" 6 70
 echo "installing zsh..."
 brew install zsh --upgrade
 echo "installing ohmyzsh..."
