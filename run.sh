@@ -89,6 +89,10 @@ fi
 echo "Installing lib dependancies for python packages..."
 brew install libxml2 libxslt
 brew install libtiff libjpeg webp little-cms2
+echo "installing tree for pretty trees directories..."
+brew install tree
+echo "install jq to display json in a pretty way..."
+brew install jq
 echo "installing bat as replacement for cat..."
 brew install bat
 echo "install exa as replacement for ls..."
