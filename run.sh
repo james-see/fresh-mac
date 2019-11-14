@@ -102,9 +102,9 @@ brew cask install iterm2
 echo "installing gpgtools..."
 brew cask install gpg-suite
 echo "installing go..."
-brew install go --upgrade
+brew install go --HEAD
 echo "installing python3..."
-brew install python3 --upgrade
+brew install python
 echo "installing fav fonts..."
 cp fonts/*.ttf /Library/Fonts/
 echo "installing Chromium..."
@@ -121,6 +121,7 @@ cat requirements.txt | sudo xargs -n 1 pip3 install
 echo "fixing DNS to encrypt all of your dns resolver lookups"
 brew install dnsmasq
 brew install dnscrypt-proxy
+sudo brew services start dnscrypt-proxy
 brew install privoxy
 brew services start privoxy
 sudo networksetup -setwebproxy "Wi-Fi" 127.0.0.1 8118
@@ -151,14 +152,11 @@ echo "turning off auto-allowing signed apps from popping through firewall..."
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
 sudo pkill -HUP socketfilterfw
+dialog --title "FINISHED" \
+--msgbox "\n Installation Completed, Enjoy Your New System\nInstalling zsh as final step" 6 50
 echo "installing zsh..."
 brew install zsh --upgrade
 echo "installing ohmyzsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 mv $HOME/.zshrc $HOME/.zshrc-backup
 cp configs/zshrc $HOME/.zshrc
-# git clone git@github.com:kristovatlas/osx-config-check.git osxlockdown
-# cd osxlockdown
-# python app.py
-dialog --title "FINISHED" \
---msgbox "\n Installation Completed, Enjoy Your New System" 6 50
