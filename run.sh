@@ -46,7 +46,6 @@ case $CHOICE in
         exit
     ;;
 esac
-brew tap caskroom/cask
 brew tap homebrew/services
 if [ "$full" = true ] ; then
     echo "installing nginx..."
@@ -91,6 +90,8 @@ if [ "$full" = true ] ; then
     echo "installing virtualbox..."
     brew cask install virtualbox
 fi
+echo "installing visual studio code"
+brew cask install visual-studio-code
 echo "install ruby version manager and rails..."
 curl -sSL https://get.rvm.io | bash -s stable --rails
 echo "installing nerd fonts..."
@@ -99,13 +100,7 @@ brew cask install font-hack-nerd-font
 echo "installing iterm2..."
 brew cask install iterm2
 echo "installing gpgtools..."
-brew cask install gpgtools
-echo "installing zsh..."
-brew install zsh --upgrade
-echo "installing ohmyzsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-mv $HOME/.zshrc $HOME/.zshrc-backup
-cp configs/zshrc $HOME/.zshrc
+brew cask install gpg-suite
 echo "installing go..."
 brew install go --upgrade
 echo "installing python3..."
@@ -156,6 +151,12 @@ echo "turning off auto-allowing signed apps from popping through firewall..."
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
 sudo pkill -HUP socketfilterfw
+echo "installing zsh..."
+brew install zsh --upgrade
+echo "installing ohmyzsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+mv $HOME/.zshrc $HOME/.zshrc-backup
+cp configs/zshrc $HOME/.zshrc
 # git clone git@github.com:kristovatlas/osx-config-check.git osxlockdown
 # cd osxlockdown
 # python app.py
