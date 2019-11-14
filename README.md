@@ -5,7 +5,7 @@ _a collection of setup scripts &amp; default app installer for a fresh Mac OS in
 
 ## HOW TO RUN
 
-Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then `cd fresh-osx` and then `python installer.py` and you are done.
+Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then `cd fresh-osx` and then `python installer.py` and you are done. Once it is complete you can `cp configs/zshrc ~/.zshrc` and then `source ~/.zshrc` to get my exact zsh config and theme working.
 
 ## INCLUDED CORE (lite setup)
 
@@ -30,6 +30,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 - TREE for pretty dirs and files list views
 - GOLANG
 - RVM to manage ruby versions
+- SET default browser to Chromium
 
 
 ## INCLUDED BATTERIES INCLUDED
@@ -39,7 +40,7 @@ ALL OF CORE PLUS:
 - [TASKWARRIOR](https://taskwarrior.org/)
 - [IMAGEMAGICK](https://www.imagemagick.org/script/index.php)
 - [ETCHER](https://etcher.io/)
-- [BARTENDER](https://www.macbartender.com)
+- [BARTENDER](https://www.macbartender.com) requires license but worth it IMO
 - [CODA](https://www.panic.com/coda/)
 - [PHP-FPM](https://php-fpm.org/download/)
 - [NGINX](https://nginx.org/en/download.html)
@@ -47,8 +48,8 @@ ALL OF CORE PLUS:
 - [NODE](https://nodejs.org/en/download/) / [NPM](https://www.npmjs.com/package/download)
 - [HTOP](http://hisham.hm/htop/)
 - [TMUX](https://github.com/tmux/tmux/wiki)
-- CHARLES
-- LITTLE SNITCH
+- [CHARLES](https://www.charlesproxy.com/) requires one time license
+- [LITTLE SNITCH](https://www.obdev.at/products/littlesnitch/index.html) requires one time license
 - HASKELL
 - ELIXIR
 - ELM
