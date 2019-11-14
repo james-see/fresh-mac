@@ -20,7 +20,6 @@ colorama
 cryptography
 cssselect
 curtsies
-cv2
 dicttoxml
 dnspython
 docopt
@@ -49,7 +48,6 @@ hyperframe
 idna
 imagesize
 inflection
-IPTCInfo
 IPTCInfo3
 iptools
 itsdangerous
@@ -57,7 +55,6 @@ jieba3k
 Jinja2
 jsonrpclib
 kik
-knockpy
 langdetect
 langid
 ledgertools
@@ -73,7 +70,7 @@ mkdocs-bootswatch
 modulegraph
 more-itertools
 msgpack-python
-mysqlclient
+mysql-python
 ndg-httpsclient
 neovim
 netaddr
@@ -84,6 +81,7 @@ numpy
 oauthlib
 ohmu
 olefile
+opencv-contrib-python
 oslo.config
 pandas
 paramiko
@@ -95,7 +93,7 @@ pkginfo
 pkutils
 ply
 psutil
-psycopg2
+psycopg2-binary
 publicsuffix
 py
 py2app
@@ -114,7 +112,7 @@ PyMySQL
 pyOpenSSL
 PyPDF2
 Pyphen
-PyRTF
+PyRTF3
 PySocks
 pytest
 python-dateutil
@@ -123,7 +121,6 @@ python-mimeparse
 pytz
 PyYAML
 Quandl
-readline
 redis
 repoze.lru
 reppy

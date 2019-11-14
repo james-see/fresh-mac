@@ -97,6 +97,9 @@ echo "installing bat as replacement for cat..."
 brew install bat
 echo "install exa as replacement for ls..."
 brew install exa
+echo "installing audio pre-requisites for pyAudio..."
+brew install portaudio
+brew link portaudio
 echo "installing visual studio code"
 brew cask install visual-studio-code
 echo "install ruby version manager and rails..."
@@ -120,7 +123,7 @@ echo "installing defaultbrowser tool and setting default to Chromium..."
 brew install defaultbrowser
 defaultbrowser chromium
 echo "installing etcher..."
-brew cask install etcher
+brew cask install balenaetcher
 echo "installing tunnelblick..."
 brew cask install tunnelblick
 echo "installing all pip packages..."
