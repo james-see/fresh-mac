@@ -85,6 +85,13 @@ if [ "$full" = true ] ; then
     brew install docker-machine-completion
     echo "installing virtualbox..."
     brew cask install virtualbox
+    echo "now for some functional stuff, installing elixir..."
+    brew install elixir
+    echo "now installing elm..."
+    brew install elm
+    echo "now installing haskell via ghcup and haskellstack..."
+    curl https://get-ghcup.haskell.org -sSf | sh
+    curl -sSL https://get.haskellstack.org/ | sh
 fi
 echo "Installing lib dependancies for python packages..."
 brew install libxml2 libxslt
@@ -141,9 +148,6 @@ echo "changing default screenshot location to ~/Documents/Screenshots because de
 mkdir $HOME/Documents/Screenshots
 defaults write com.apple.screencapture location ~/Documents/Screenshots
 killall SystemUIServer
-echo "running osx lockdown checks..."
-mkdir $HOME/projects
-cd $HOME/projects
 echo "turning on fulldisk encryption..."
 sudo fdesetup enable
 echo "evicting filevault keys from memory at sleep..."
@@ -165,10 +169,9 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
 sudo pkill -HUP socketfilterfw
 dialog --title "FINISHED" \
---msgbox "\n Installation Completed, Enjoy \nYour New System\nInstalling zsh as final step" 12 70
+--msgbox "\n Installation Completed, Enjoy Your New System\nInstalling zsh as final step" 12 70
 echo "installing zsh..."
 brew install zsh --upgrade
 echo "installing ohmyzsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-mv $HOME/.zshrc $HOME/.zshrc-backup
-cp configs/zshrc $HOME/.zshrc
+
