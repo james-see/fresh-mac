@@ -94,6 +94,9 @@ if [ "$full" = true ] ; then
     curl -sSL https://get.haskellstack.org/ | sh
     echo "now installing spectacle window manager..."
     brew cask install spectacle
+    echo "now installing vagrant and vagrant manager..."
+    brew cask install vagrant
+    brew cask install vagrant-manager
 fi
 echo "Installing lib dependancies for python packages..."
 brew install libxml2 libxslt
