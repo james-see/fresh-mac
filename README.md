@@ -39,7 +39,7 @@ ALL OF CORE PLUS:
 
 - [TASKWARRIOR](https://taskwarrior.org/)
 - [IMAGEMAGICK](https://www.imagemagick.org/script/index.php)
-- [ETCHER](https://etcher.io/)
+- [BALENA ETCHER](https://www.balena.io/etcher/)
 - [BARTENDER](https://www.macbartender.com) requires license but worth it IMO
 - [CODA](https://www.panic.com/coda/)
 - [PHP-FPM](https://php-fpm.org/download/)
@@ -50,21 +50,18 @@ ALL OF CORE PLUS:
 - [TMUX](https://github.com/tmux/tmux/wiki)
 - [CHARLES](https://www.charlesproxy.com/) requires one time license
 - [LITTLE SNITCH](https://www.obdev.at/products/littlesnitch/index.html) requires one time license
-- HASKELL
-- ELIXIR
-- ELM
-- VIRTUALBOX
-- DOCKER
+- [HASKELL](https://www.haskell.org/)
+- [ELIXIR](https://elixir-lang.org/)
+- [ELM](https://elm-lang.org/)
+- [VIRTUALBOX](https://www.virtualbox.org/)
+- [DOCKER](https://docs.docker.com/install/)
 - [SPECTACLE](https://www.spectacleapp.com/)
+- [VAGRANT](https://www.vagrantup.com/) and VAGRANT-MANAGER
 
 ## HOW TO CONTRIBUTE
 
 Fork it and issue a pull request!
 
 ## FUTURE PLANS
-
-(DONE but needs tested)
-
-Adding a lite option that doesn't include php-fpm nginx mysql etcher taskwarrior node npm python3 pip htop tmux
 
 Adding an ansible version instead of pure BASH.
