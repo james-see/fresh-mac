@@ -97,6 +97,8 @@ if [ "$full" = true ] ; then
     echo "now installing vagrant and vagrant manager..."
     brew cask install vagrant
     brew cask install vagrant-manager
+    echo "now install vagrant-vbguest plugin..."
+    vagrant plugin install vagrant-vbguest
 fi
 echo "Installing lib dependancies for python packages..."
 brew install libxml2 libxslt
