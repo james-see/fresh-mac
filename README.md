@@ -32,7 +32,6 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 - RVM to manage ruby versions
 - SET default browser to Chromium
 
-
 ## INCLUDED BATTERIES INCLUDED
 
 ALL OF CORE PLUS:
@@ -57,6 +56,7 @@ ALL OF CORE PLUS:
 - [DOCKER](https://docs.docker.com/install/)
 - [SPECTACLE](https://www.spectacleapp.com/)
 - [VAGRANT](https://www.vagrantup.com/) and VAGRANT-MANAGER
+- [RUST](https://www.rust-lang.org/)
 
 ## HOW TO CONTRIBUTE
 
