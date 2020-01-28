@@ -31,6 +31,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 - GOLANG
 - RVM to manage ruby versions
 - SET default browser to Chromium
+- [mdcat](https://github.com/lunaryorn/mdcat) render markdown
 
 ## INCLUDED BATTERIES INCLUDED
 
@@ -57,6 +58,8 @@ ALL OF CORE PLUS:
 - [SPECTACLE](https://www.spectacleapp.com/)
 - [VAGRANT](https://www.vagrantup.com/) and VAGRANT-MANAGER
 - [RUST](https://www.rust-lang.org/)
+- [DUST](https://github.com/bootandy/dust)
+- [PIANOBAR](https://github.com/PromyLOPh/pianobar/)
 
 ## HOW TO CONTRIBUTE
 

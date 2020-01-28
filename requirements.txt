@@ -144,6 +144,7 @@ spry
 stevedore
 surt
 tabulate
+tabview
 termcolor
 textblob
 tinycss

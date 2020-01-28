@@ -101,6 +101,10 @@ if [ "$full" = true ] ; then
     vagrant plugin install vagrant-vbguest
     echo "now installing rust..."
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    echo "now installing dust (du but better)..."
+    cargo install du-dust
+    echo "now installing pianobar (pandora radio from terminal)..."
+    brew install pianobar
 fi
 echo "Installing lib dependancies for python packages..."
 brew install libxml2 libxslt
@@ -113,6 +117,8 @@ echo "installing bat as replacement for cat..."
 brew install bat
 echo "install exa as replacement for ls..."
 brew install exa
+echo "install mdcat to render markdown..."
+brew install mdcat
 echo "installing audio pre-requisites for pyAudio..."
 brew install portaudio
 brew link portaudio
