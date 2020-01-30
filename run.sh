@@ -105,6 +105,8 @@ if [ "$full" = true ] ; then
     cargo install du-dust
     echo "now installing pianobar (pandora radio from terminal)..."
     brew install pianobar
+    echo "now installing gtime, better than time at timing processes..."
+    brew install gtime
 fi
 echo "Installing lib dependancies for python packages..."
 brew install libxml2 libxslt
