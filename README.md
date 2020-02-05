@@ -20,6 +20,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 - lots of python libraries via requirements.txt
 - DNSCRYPT for secure DNS lookups
 - WIPE profile image to default
+- SET MESSAGE ON login to call if found for reward
 - LOCK DOWN FIREWALL
 - TURN ON FULL DISK ENCRYPTION
 - DUMP FULL DISK ENCRYPTION KEY OUT OF MEMORY ON SLEEP
