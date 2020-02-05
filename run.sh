@@ -8,6 +8,7 @@ else
     echo "brew not found, installing now..."
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+PHONE=${PHONE}
 brew install dialog
 brew analytics off
 HEIGHT=12
@@ -108,6 +109,8 @@ if [ "$full" = true ] ; then
     echo "now installing gtime, better than time at timing processes..."
     brew install gtime
 fi
+echo "Setting message for login screen..."
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Please call or text ${PHONE} for reward"
 echo "Installing lib dependancies for python packages..."
 brew install libxml2 libxslt
 brew install libtiff libjpeg webp little-cms2
