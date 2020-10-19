@@ -108,6 +108,12 @@ if [ "$full" = true ] ; then
     brew install pianobar
     echo "now installing gtime, better than time at timing processes..."
     brew install gtime
+    echo "now installing glow, a nice markdown viewer for the cli..."
+    brew install glow
+    echo "now installing nb the terminal based notebook solution..."
+    brew tap xwmx/taps
+    brew install nb
+
 fi
 echo "Setting message for login screen..."
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Please call or text ${PHONE} for reward"
