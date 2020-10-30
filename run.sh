@@ -115,6 +115,8 @@ if [ "$full" = true ] ; then
     brew install nb
 
 fi
+echo "Installing jpeg optim..."
+brew install jpegoptim
 echo "Setting message for login screen..."
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Please call or text ${PHONE} for reward"
 echo "Installing lib dependancies for python packages..."
