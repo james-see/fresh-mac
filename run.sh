@@ -113,7 +113,10 @@ if [ "$full" = true ] ; then
     echo "now installing nb the terminal based notebook solution..."
     brew tap xwmx/taps
     brew install nb
-
+    echo "now installing JamWifi..."
+    wget macheads101.com/pages/downloads/mac/JamWiFi.app.zip
+    unzip JamWifi.app.zip
+    mv JamWifi.app /Applications
 fi
 echo "Installing jpeg optim..."
 brew install jpegoptim
