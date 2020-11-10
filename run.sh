@@ -147,6 +147,8 @@ brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
 echo "installing iterm2..."
 brew cask install iterm2
+echo "installing calibre epub reader..."
+brew cask install calibre
 echo "installing gpgtools..."
 brew cask install gpg-suite
 echo "installing go..."

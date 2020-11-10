@@ -12,6 +12,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 - [HOMEBREW](https://brew.sh)
 - [TUNNELBLICK](https://www.tunnelblick.net/)
 - [CHROMIUM](https://www.chromium.org/)
+- [CALIBRE](https://caibre-ebook.com/)
 - [ZSH](https://www.zsh.org/) & [OH-MY-ZSH](http://ohmyz.sh/)
 - [GPG TOOLS](https://gpgtools.org/)
 - [TOR](https://www.torproject.org/download/download.html.en) (brew services start tor, config in /usr/local/etc/tor/, running at 127.0.0.1:9050)
