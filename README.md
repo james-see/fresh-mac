@@ -62,6 +62,7 @@ ALL OF CORE PLUS:
 - [RUST](https://www.rust-lang.org/)
 - [DUST](https://github.com/bootandy/dust)
 - [PIANOBAR](https://github.com/PromyLOPh/pianobar/)
+- [BLUETILITY](https://github.com/jnross/Bluetility)
 
 ## HOW TO CONTRIBUTE
 

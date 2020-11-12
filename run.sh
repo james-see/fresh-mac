@@ -117,6 +117,8 @@ if [ "$full" = true ] ; then
     wget http://macheads101.com/pages/downloads/mac/JamWiFi.app.zip
     unzip JamWifi.app.zip
     mv JamWifi.app /Applications
+    echo "now installing Bluetility..."
+    brew cask install bluetility
 fi
 echo "Installing jpeg optim..."
 brew install jpegoptim
