@@ -34,6 +34,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 - RVM to manage ruby versions
 - SET default browser to Chromium
 - [mdcat](https://github.com/lunaryorn/mdcat) render markdown
+- parquet-tools to view parquet files
 
 ## INCLUDED BATTERIES INCLUDED
 

@@ -120,6 +120,8 @@ if [ "$full" = true ] ; then
     echo "now installing Bluetility..."
     brew cask install bluetility
 fi
+echo "Installing parquet-tools to manipulate parquet files..."
+brew install parquet-tools
 echo "Installing jpeg optim..."
 brew install jpegoptim
 echo "Setting message for login screen..."
