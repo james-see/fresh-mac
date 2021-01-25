@@ -191,6 +191,8 @@ echo "evicting filevault keys from memory at sleep..."
 sudo pmset -a destroyfvkeyonstandby 1
 echo "enforcing hibernation..."
 sudo pmset -a hibernatemode 25
+echo "changing autohide speed to instant for the dock..."
+defaults write com.apple.Dock autohide-delay -float 0.0001; killall Dock
 echo "modifying standby and nap settings, turning off powernap etc..."
 sudo pmset -a powernap 0
 sudo pmset -a standby 0
