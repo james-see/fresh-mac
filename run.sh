@@ -119,6 +119,8 @@ if [ "$full" = true ] ; then
     mv JamWifi.app /Applications
     echo "now installing Bluetility..."
     brew cask install bluetility
+    sudo rm -rf OpenDNS\ Roaming\ Client
+    sudo rm -rf OPSWAT\ GEARS\ Client
 fi
 echo "Installing parquet-tools to manipulate parquet files..."
 brew install parquet-tools
