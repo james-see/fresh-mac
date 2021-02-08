@@ -75,8 +75,10 @@ if [ "$full" = true ] ; then
     brew install tmux
     echo "installing imagemagick..."
     brew install imagemagick
-    echo "installing Panic's Coda..."
-    brew install coda
+    echo "installing Panic's Nova..."
+    brew install nova
+    echo "installing Objective See's Lulu..."
+    brew install lulu
     echo "installing bartender..."
     brew install bartender
     echo "installing docker..."
