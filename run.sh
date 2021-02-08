@@ -55,6 +55,8 @@ if [ "$full" = true ] ; then
     brew install task
     brew install taskd
     brew install tasksh
+    echo "installing wget..."
+    brew install wget
     echo "installing nodejs and npm and nvm..."
     brew install node
     brew install npm
@@ -64,9 +66,9 @@ if [ "$full" = true ] ; then
     echo "installing hgrep from npm to do nice etl parsing..."
     npm install -g hgrep
     echo "installing charles..."
-    brew cask install charles
+    brew install charles
     echo "installing little snitch..."
-    brew cask install little-snitch
+    brew install little-snitch
     echo "installing htop..."
     brew install htop
     echo "installing tmux..."
@@ -74,18 +76,18 @@ if [ "$full" = true ] ; then
     echo "installing imagemagick..."
     brew install imagemagick
     echo "installing Panic's Coda..."
-    brew cask install coda
+    brew install coda
     echo "installing bartender..."
-    brew cask install bartender
+    brew install bartender
     echo "installing docker..."
-    brew cask install docker
+    brew install docker
     echo "installing docker completions..."
     brew install bash-completion
     brew install docker-completion
     brew install docker-compose-completion
     brew install docker-machine-completion
     echo "installing virtualbox..."
-    brew cask install virtualbox
+    brew install virtualbox
     echo "now for some functional stuff, installing elixir..."
     brew install elixir
     echo "now installing elm..."
@@ -94,10 +96,10 @@ if [ "$full" = true ] ; then
     curl https://get-ghcup.haskell.org -sSf | sh
     curl -sSL https://get.haskellstack.org/ | sh
     echo "now installing spectacle window manager..."
-    brew cask install spectacle
+    brew install spectacle
     echo "now installing vagrant and vagrant manager..."
-    brew cask install vagrant
-    brew cask install vagrant-manager
+    brew install vagrant
+    brew install vagrant-manager
     echo "now installing vagrant-vbguest plugin..."
     vagrant plugin install vagrant-vbguest
     echo "now installing rust..."
@@ -118,7 +120,7 @@ if [ "$full" = true ] ; then
     unzip JamWifi.app.zip
     mv JamWifi.app /Applications
     echo "now installing Bluetility..."
-    brew cask install bluetility
+    brew install bluetility
     sudo rm -rf OpenDNS\ Roaming\ Client
     sudo rm -rf OPSWAT\ GEARS\ Client
 fi
@@ -145,18 +147,18 @@ echo "installing audio pre-requisites for pyAudio..."
 brew install portaudio
 brew link portaudio
 echo "installing visual studio code"
-brew cask install visual-studio-code
+brew install visual-studio-code
 echo "install ruby version manager and rails..."
 curl -sSL https://get.rvm.io | bash -s stable --rails
 echo "installing nerd fonts..."
 brew tap homebrew/cask-fonts
-brew cask install font-hack-nerd-font
+brew install font-hack-nerd-font
 echo "installing iterm2..."
-brew cask install iterm2
+brew install iterm2
 echo "installing calibre epub reader..."
-brew cask install calibre
+brew install calibre
 echo "installing gpgtools..."
-brew cask install gpg-suite
+brew install gpg-suite
 echo "installing go..."
 brew install go --HEAD
 echo "installing python3..."
@@ -164,14 +166,14 @@ brew install python
 echo "installing fav fonts..."
 cp fonts/*.ttf /Library/Fonts/
 echo "installing Chromium..."
-brew cask install chromium
+brew install chromium
 echo "installing defaultbrowser tool and setting default to Chromium..."
 brew install defaultbrowser
 defaultbrowser chromium
 echo "installing etcher..."
-brew cask install balenaetcher
+brew install balenaetcher
 echo "installing tunnelblick..."
-brew cask install tunnelblick
+brew install tunnelblick
 echo "installing all pip packages..."
 cat requirements.txt | sudo xargs -n 1 pip3 install
 echo "fixing DNS to encrypt all of your dns resolver lookups"
