@@ -3,7 +3,7 @@
 Fresh as in Fresh!
 _a collection of setup scripts &amp; default app installer for a fresh Mac OS install complete with a full & core version_
 
-!(https://i.imgur.com/5cNy1F7.png)
+![](https://i.imgur.com/5cNy1F7.png)
 
 ## HOW TO RUN
 
