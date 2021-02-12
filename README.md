@@ -3,6 +3,8 @@
 Fresh as in Fresh!
 _a collection of setup scripts &amp; default app installer for a fresh Mac OS install complete with a full & core version_
 
+!(https://i.imgur.com/5cNy1F7.png)
+
 ## HOW TO RUN
 
 Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then `cd fresh-osx` and then `python installer.py [your contact email or phone number]` and you are done. Once it is complete you can `cp configs/zshrc ~/.zshrc` and then `source ~/.zshrc` to get my exact zsh config and theme working. Passing in the phone number or email is important to ensure the message on the login screen of your mac has your contact info in case the computer goes missing.
