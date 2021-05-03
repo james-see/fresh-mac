@@ -121,8 +121,11 @@ if [ "$full" = true ] ; then
     wget http://macheads101.com/pages/downloads/mac/JamWiFi.app.zip
     unzip JamWifi.app.zip
     mv JamWifi.app /Applications
-    echo "now installing Bluetility..."
+    echo "now installing Bluetility https://github.com/jnross/Bluetility..."
     brew install bluetility
+    echo "now instaling multipass to spin up ubuntu VMs quickly..."
+    brew install --cask multipass
+    echo "removing extra clients as necessary..."
     sudo rm -rf OpenDNS\ Roaming\ Client
     sudo rm -rf OPSWAT\ GEARS\ Client
 fi
