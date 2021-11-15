@@ -128,6 +128,11 @@ if [ "$full" = true ] ; then
     echo "removing extra clients as necessary..."
     sudo rm -rf OpenDNS\ Roaming\ Client
     sudo rm -rf OPSWAT\ GEARS\ Client
+    echo "now installing rainbowstream Twitter terminal client..."
+    pip3 install rainbowstream
+    echo "now installing slack-term, terminal client for Slack..."
+    # must go here https://github.com/erroneousboat/slack-term/wiki#running-slack-term-without-legacy-tokens to get token
+    brew install slack-term
 fi
 echo "Installing parquet-tools to manipulate parquet files..."
 brew install parquet-tools

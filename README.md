@@ -66,6 +66,8 @@ ALL OF CORE PLUS:
 - [DUST](https://github.com/bootandy/dust)
 - [PIANOBAR](https://github.com/PromyLOPh/pianobar/)
 - [BLUETILITY](https://github.com/jnross/Bluetility)
+- [SLACK-TERM](https://github.com/erroneousboat/slack-term) slack terminal client
+- [rainbowstream](https://github.com/orakaro/rainbowstream) twitter terminal client
 
 ## HOW TO CONTRIBUTE
 
@@ -74,3 +76,7 @@ Fork it and issue a pull request!
 ## FUTURE PLANS
 
 Adding an ansible version instead of pure BASH.
+
+## Update Log
+
+14NOV2021: Added slack-term and rainbowstream
