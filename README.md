@@ -7,10 +7,11 @@ _a collection of setup scripts &amp; default app installer for a fresh Mac OS in
 
 ## HOW TO RUN
 
-Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then `cd fresh-osx` and then `python installer.py [your contact email or phone number]` and you are done. Once it is complete you can `cp configs/zshrc ~/.zshrc` and then `source ~/.zshrc` to get my exact zsh config and theme working. Passing in the phone number or email is important to ensure the message on the login screen of your mac has your contact info in case the computer goes missing.
+Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then `cd fresh-mac` and then `python installer.py [your contact email or phone number]` and you are done. Once it is complete you can `cp configs/zshrc ~/.zshrc` and then `source ~/.zshrc` to get my exact zsh config and theme working. Passing in the phone number or email is important to ensure the message on the login screen of your mac has your contact info in case the computer goes missing.
 
 ## INCLUDED CORE (lite setup)
 
+### Basic stuff
 - [HOMEBREW](https://brew.sh)
 - [TUNNELBLICK](https://www.tunnelblick.net/)
 - [CHROMIUM](https://www.chromium.org/)
@@ -21,22 +22,27 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-osx.git` and then 
 - [PRIVOXY](http://www.privoxy.org/) (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)
 - [PYTHON 3 & PIP](https://www.python.org/)
 - lots of python libraries via requirements.txt
-- DNSCRYPT for secure DNS lookups
+### Security Stuff  
+- DNSCRYPT for secure DNS lookups & works with Privoxy
 - WIPE profile image to default
 - SET MESSAGE ON login to call if found for reward
-- LOCK DOWN FIREWALL
+- LOCK DOWN FIREWALL (turn on stealth mode, etc.)
 - TURN ON FULL DISK ENCRYPTION
 - DUMP FULL DISK ENCRYPTION KEY OUT OF MEMORY ON SLEEP
+- Turn off auto-allowing signed apps from pooping/popping through firewall
+- Enforces hibernation
+- Turn off powernap BS (no, don't ping the internet assholes when my computer is asleep)
+- SET default browser to Chromium
+### Other Niceties in Core  
 - [NERD-FONTS](https://github.com/ryanoasis/nerd-fonts)
 - BAT for cat (aliased)
 - EXA for ls (aliased)
-- JQ for pretty print json and sanity
-- TREE for pretty dirs and files list views
-- GOLANG
+- JQ for pretty print json and sanity & sweet pipe moves
+- TREE for pretty dirs and files list views for days
+- GOLANG - because it is better than Python in every way and not as difficult as Rust
 - RVM to manage ruby versions
-- SET default browser to Chromium
 - [mdcat](https://github.com/lunaryorn/mdcat) render markdown
-- parquet-tools to view parquet files
+- parquet-tools to view parquet files and other BS like that
 
 ## INCLUDED BATTERIES INCLUDED
 
@@ -67,7 +73,8 @@ ALL OF CORE PLUS:
 - [PIANOBAR](https://github.com/PromyLOPh/pianobar/)
 - [BLUETILITY](https://github.com/jnross/Bluetility)
 - [SLACK-TERM](https://github.com/erroneousboat/slack-term) slack terminal client
-- [rainbowstream](https://github.com/orakaro/rainbowstream) twitter terminal client
+- [RAINBOWSTREAM](https://github.com/orakaro/rainbowstream) twitter terminal client
+- [PROXYCHAINS](https://github.com/rofl0r/proxychains-ng) run by `proxychains4` and your command to proxy via Tor or any other web/socks proxy before you hit your destination
 
 ## HOW TO CONTRIBUTE
 
