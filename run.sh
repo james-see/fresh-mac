@@ -133,6 +133,8 @@ if [ "$full" = true ] ; then
     echo "now installing slack-term, terminal client for Slack..."
     # must go here https://github.com/erroneousboat/slack-term/wiki#running-slack-term-without-legacy-tokens to get token
     brew install slack-term
+    echo "now installing spotify terminal client..."
+    brew install spotify-tui
 fi
 echo "Installing parquet-tools to manipulate parquet files..."
 brew install parquet-tools
