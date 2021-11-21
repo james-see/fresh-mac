@@ -75,6 +75,9 @@ ALL OF CORE PLUS:
 - [SLACK-TERM](https://github.com/erroneousboat/slack-term) slack terminal client
 - [RAINBOWSTREAM](https://github.com/orakaro/rainbowstream) twitter terminal client
 - [PROXYCHAINS](https://github.com/rofl0r/proxychains-ng) run by `proxychains4` and your command to proxy via Tor or any other web/socks proxy before you hit your destination
+- [PURE prompt](https://github.com/sindresorhus/pure) a great prompt for zsh
+- [SPOTIFY-TUI](https://github.com/Rigellute/spotify-tui) spotify terminal client written in Rust
+- [SPOTIFYD](https://github.com/Spotifyd/spotifyd) spotify service that you connect spotify-tui to
 
 ## HOW TO CONTRIBUTE
 

@@ -14,6 +14,12 @@ plugins=(git osx vscode tmux taskwarrior rand-quote redis-cli)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
+# pure prompt init (brew install pure)
+autoload -U promptinit; promptinit
+prompt pure
+# default is blue so we make it green
+zstyle :prompt:pure:path color green
+
 # aliases
 alias cat="bat"
 alias ls="exa"

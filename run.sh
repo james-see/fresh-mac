@@ -139,6 +139,9 @@ if [ "$full" = true ] ; then
     echo "now install spotify server"
     # must add this https://spotifyd.github.io/spotifyd/config/File.html as spotifyd.conf
     brew install spotifyd
+    # must add two lines to zshrc to get pure to be prompt
+    echo "installing pure prompt for zsh..."
+    brew install pure
 fi
 echo "Installing parquet-tools to manipulate parquet files..."
 brew install parquet-tools
