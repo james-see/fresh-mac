@@ -135,6 +135,10 @@ if [ "$full" = true ] ; then
     brew install slack-term
     echo "now installing spotify terminal client..."
     brew install spotify-tui
+    # must ensure you create an app at developer.spotify.com
+    echo "now install spotify server"
+    # must add this https://spotifyd.github.io/spotifyd/config/File.html as spotifyd.conf
+    brew install spotifyd
 fi
 echo "Installing parquet-tools to manipulate parquet files..."
 brew install parquet-tools
