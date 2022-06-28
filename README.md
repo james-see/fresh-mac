@@ -89,4 +89,6 @@ Adding an ansible version instead of pure BASH.
 
 ## Update Log
 
+27JUN2022 Added wipe the Dock of crapware, updated pip permissions, fixed some other M1 related stuff
+
 14NOV2021: Added slack-term and rainbowstream
