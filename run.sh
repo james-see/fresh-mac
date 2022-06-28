@@ -7,6 +7,8 @@ if which brew 2>/dev/null; then
 else
     echo "brew not found, installing now..."
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
+    source ~/.zshrc
 fi
 PHONE=${PHONE}
 brew install dialog
@@ -98,7 +100,6 @@ if [ "$full" = true ] ; then
     curl https://get-ghcup.haskell.org -sSf | sh
     curl -sSL https://get.haskellstack.org/ | sh
     echo "now installing spectacle window manager..."
-    brew install spectacle
     echo "now installing vagrant and vagrant manager..."
     brew install vagrant
     brew install vagrant-manager
@@ -128,6 +129,7 @@ if [ "$full" = true ] ; then
     echo "removing extra clients as necessary..."
     sudo rm -rf OpenDNS\ Roaming\ Client
     sudo rm -rf OPSWAT\ GEARS\ Client
+    sudo chown -R "$USER" /Users/jc/Library/Caches/pip
     echo "now installing rainbowstream Twitter terminal client..."
     pip3 install rainbowstream
     echo "now installing slack-term, terminal client for Slack..."
@@ -143,6 +145,11 @@ if [ "$full" = true ] ; then
     echo "installing pure prompt for zsh..."
     brew install pure
 fi
+sudo chown -R "$USER" /Users/jc/Library/Caches/pip
+echo "Removing all bs from the Dock..."
+sudo defaults write com.apple.dock persistent-apps -array
+echo "Resetting dock..."
+killall Dock
 echo "Installing parquet-tools to manipulate parquet files..."
 brew install parquet-tools
 echo "Installing jpeg optim..."
@@ -180,8 +187,6 @@ echo "installing gpgtools..."
 brew install gpg-suite
 echo "installing go..."
 brew install go --HEAD
-echo "installing python3..."
-brew install python
 echo "installing fav fonts..."
 cp fonts/*.ttf /Library/Fonts/
 echo "installing Chromium..."
@@ -194,6 +199,8 @@ brew install balenaetcher
 echo "installing tunnelblick..."
 brew install tunnelblick
 echo "installing all pip packages..."
+python3 -m pip install --upgrade pip
+sudo chown -R "$USER" /Users/jc/Library/Caches/pip
 cat requirements.txt | sudo xargs -n 1 pip3 install
 echo "fixing DNS to encrypt all of your dns resolver lookups"
 brew install dnsmasq
