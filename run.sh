@@ -83,6 +83,12 @@ if [ "$full" = true ] ; then
     brew install lulu
     echo "installing bartender..."
     brew install bartender
+    echo "installing tidy-viewer csv viewer..."
+    brew install tidy-viewer
+    echo "installing viddy..."
+    brew install viddy
+    echo "installing gradle and openjdk..."
+    brew install gradle openjdk
     echo "installing docker..."
     brew install docker
     echo "installing docker completions..."
@@ -99,12 +105,6 @@ if [ "$full" = true ] ; then
     echo "now installing haskell via ghcup and haskellstack..."
     curl https://get-ghcup.haskell.org -sSf | sh
     curl -sSL https://get.haskellstack.org/ | sh
-    echo "now installing spectacle window manager..."
-    echo "now installing vagrant and vagrant manager..."
-    brew install vagrant
-    brew install vagrant-manager
-    echo "now installing vagrant-vbguest plugin..."
-    vagrant plugin install vagrant-vbguest
     echo "now installing rust..."
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     echo "now installing dust (du but better)..."
@@ -118,6 +118,12 @@ if [ "$full" = true ] ; then
     echo "now installing nb the terminal based notebook solution..."
     brew tap xwmx/taps
     brew install nb
+    echo "install w3m, terminal based browser..."
+    brew install w3m
+    echo "installing calibre epub reader..."
+    brew install calibre
+    echo "installing duckdb amazing csv explorer..."
+    brew install duckdb
     echo "now installing JamWifi..."
     wget http://macheads101.com/pages/downloads/mac/JamWiFi.app.zip
     unzip JamWifi.app.zip
@@ -154,6 +160,8 @@ echo "Installing parquet-tools to manipulate parquet files..."
 brew install parquet-tools
 echo "Installing jpeg optim..."
 brew install jpegoptim
+echo "Installing rectangle window manager via shortcut keys (spectacle replacement)..."
+brew install --cask rectangle
 echo "Setting message for login screen..."
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Please call or text ${PHONE} for reward"
 echo "Installing lib dependancies for python packages..."
@@ -165,8 +173,14 @@ echo "install jq to display json in a pretty way..."
 brew install jq
 echo "installing bat as replacement for cat..."
 brew install bat
+echo "installing no-more-secrets..."
+brew install nms
+echo "installing jrnl, simple notetaking tool..."
+brew install jrnl
 echo "install exa as replacement for ls..."
 brew install exa
+echo "install insomnia api tool..."
+brew install insomnia
 echo "install mdcat to render markdown..."
 brew install mdcat
 echo "installing audio pre-requisites for pyAudio..."
@@ -181,8 +195,6 @@ brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
 echo "installing iterm2..."
 brew install iterm2
-echo "installing calibre epub reader..."
-brew install calibre
 echo "installing gpgtools..."
 brew install gpg-suite
 echo "installing go..."
@@ -191,9 +203,13 @@ echo "installing fav fonts..."
 cp fonts/*.ttf /Library/Fonts/
 echo "installing Chromium..."
 brew install chromium
+echo "installing Brave..."
+brew install --cask brave-browser
 echo "installing defaultbrowser tool and setting default to Chromium..."
 brew install defaultbrowser
-defaultbrowser chromium
+defaultbrowser brave-browser
+echo "installing jetbrains-toolbox for those that want to use that ide paradigm..."
+brew install --cask jetbrains-toolbox
 echo "installing etcher..."
 brew install balenaetcher
 echo "installing tunnelblick..."
@@ -220,7 +236,7 @@ sudo fdesetup enable
 echo "evicting filevault keys from memory at sleep..."
 sudo pmset -a destroyfvkeyonstandby 1
 echo "enforcing hibernation..."
-sudo pmset -a hibernatemode 25
+sudo pmset -a hibernatemode 3
 echo "changing autohide speed to instant for the dock..."
 defaults write com.apple.Dock autohide-delay -float 0.0001; killall Dock
 echo "modifying standby and nap settings, turning off powernap etc..."
