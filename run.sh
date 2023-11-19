@@ -120,8 +120,6 @@ if [ "$full" = true ] ; then
     brew install nb
     echo "install w3m, terminal based browser..."
     brew install w3m
-    echo "installing calibre epub reader..."
-    brew install calibre
     echo "installing duckdb amazing csv explorer..."
     brew install duckdb
     echo "now installing JamWifi..."
