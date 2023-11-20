@@ -6,7 +6,7 @@ if which brew 2>/dev/null; then
     echo "brew already installed, skipping..."
 else
     echo "brew not found, installing now..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
     source ~/.zshrc
 fi
