@@ -8,7 +8,7 @@ ZSH_THEME="ys"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
-plugins=(git osx vscode tmux taskwarrior rand-quote redis-cli)
+plugins=(git vscode taskwarrior rand-quote redis-cli)
 
 # oh my zsh stuff
 source $ZSH/oh-my-zsh.sh
@@ -72,3 +72,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source /Users/$USER/.travis/travis.sh
+eval "$(/opt/homebrew/bin/brew shellenv)"
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

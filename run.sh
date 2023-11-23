@@ -212,6 +212,8 @@ echo "installing etcher..."
 brew install balenaetcher
 echo "installing tunnelblick..."
 brew install tunnelblick
+echo "installing signal..."
+brew install signal
 echo "installing all pip packages..."
 python3 -m pip install --upgrade pip
 sudo chown -R "$USER" /Users/jc/Library/Caches/pip
