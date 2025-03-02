@@ -77,8 +77,6 @@ if [ "$full" = true ] ; then
     brew install tmux
     echo "installing imagemagick..."
     brew install imagemagick
-    echo "installing Panic's Nova..."
-    brew install nova
     echo "installing Objective See's Lulu..."
     brew install lulu
     echo "installing bartender..."
@@ -89,15 +87,6 @@ if [ "$full" = true ] ; then
     brew install viddy
     echo "installing gradle and openjdk..."
     brew install gradle openjdk
-    echo "installing docker..."
-    brew install docker
-    echo "installing docker completions..."
-    brew install bash-completion
-    brew install docker-completion
-    brew install docker-compose-completion
-    brew install docker-machine-completion
-    echo "installing virtualbox..."
-    brew install virtualbox
     echo "now for some functional stuff, installing elixir..."
     brew install elixir
     echo "now installing elm..."
@@ -111,8 +100,6 @@ if [ "$full" = true ] ; then
     cargo install du-dust
     echo "now installing pianobar (pandora radio from terminal)..."
     brew install pianobar
-    echo "now installing gtime, better than time at timing processes..."
-    brew install gtime
     echo "now installing glow, a nice markdown viewer for the cli..."
     brew install glow
     echo "now installing nb the terminal based notebook solution..."
@@ -149,13 +136,10 @@ if [ "$full" = true ] ; then
     echo "installing pure prompt for zsh..."
     brew install pure
 fi
-sudo chown -R "$USER" /Users/jc/Library/Caches/pip
 echo "Removing all bs from the Dock..."
 sudo defaults write com.apple.dock persistent-apps -array
 echo "Resetting dock..."
 killall Dock
-echo "Installing parquet-tools to manipulate parquet files..."
-brew install parquet-tools
 echo "Installing jpeg optim..."
 brew install jpegoptim
 echo "Installing rectangle window manager via shortcut keys (spectacle replacement)..."
@@ -171,14 +155,8 @@ echo "install jq to display json in a pretty way..."
 brew install jq
 echo "installing bat as replacement for cat..."
 brew install bat
-echo "installing no-more-secrets..."
-brew install nms
 echo "installing jrnl, simple notetaking tool..."
 brew install jrnl
-echo "install exa as replacement for ls..."
-brew install exa
-echo "install insomnia api tool..."
-brew install insomnia
 echo "install mdcat to render markdown..."
 brew install mdcat
 echo "installing audio pre-requisites for pyAudio..."
@@ -193,8 +171,6 @@ brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
 echo "installing iterm2..."
 brew install iterm2
-echo "installing gpgtools..."
-brew install gpg-suite
 echo "installing go..."
 brew install go --HEAD
 echo "installing fav fonts..."
@@ -206,12 +182,8 @@ brew install --cask brave-browser
 echo "installing defaultbrowser tool and setting default to Chromium..."
 brew install defaultbrowser
 defaultbrowser brave-browser
-echo "installing jetbrains-toolbox for those that want to use that ide paradigm..."
-brew install --cask jetbrains-toolbox
 echo "installing etcher..."
 brew install balenaetcher
-echo "installing tunnelblick..."
-brew install tunnelblick
 echo "installing signal..."
 brew install signal
 echo "installing all pip packages..."
@@ -228,7 +200,7 @@ sudo networksetup -setwebproxy "Wi-Fi" 127.0.0.1 8118
 echo "turning off captive control when searching for wifi networks"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 echo "changing default screenshot location to ~/Documents/Screenshots because desktop screenshots suck..."
-mkdir $HOME/Documents/Screenshots
+mkdir "$HOME"/Documents/Screenshots
 defaults write com.apple.screencapture location ~/Documents/Screenshots
 killall SystemUIServer
 echo "turning on fulldisk encryption..."

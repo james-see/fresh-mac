@@ -1,4 +1,4 @@
-#!/usr/bin/python
+"""Fresh Mac installer for zsh configuration and setup scripts."""
 # Author: James Campbell
 # What: Runs the run.sh installer script and copies the zsh file into place
 import sys
@@ -10,4 +10,4 @@ call(["mv", "$HOME/.zshrc", "$HOME/.zshrc-backup"])
 call(["cp", "./configs/zshrc", "$HOME/.zshrc"])
 print("setting up the new zshrc")
 call(["exec", "zsh"])
-exit("finis")
+sys.exit("finis")
