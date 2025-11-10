@@ -94,6 +94,8 @@ ALL OF CORE PLUS:
 - [BLUETILITY](https://github.com/jnross/Bluetility)
 - [SLACK-TERM](https://github.com/erroneousboat/slack-term) slack terminal client
 - [RAINBOWSTREAM](https://github.com/orakaro/rainbowstream) twitter terminal client
+- [REDDIX](https://github.com/ck-zhang/reddix) reddit terminal client with image/video preview
+- [MCAT](https://github.com/Skardyy/mcat) terminal image, video, directory, and markdown viewer
 - [PROXYCHAINS](https://github.com/rofl0r/proxychains-ng) run by `proxychains4` and your command to proxy via Tor or any other web/socks proxy before you hit your destination
 - [PURE prompt](https://github.com/sindresorhus/pure) a great prompt for zsh
 - [SPOTIFY-TUI](https://github.com/Rigellute/spotify-tui) spotify terminal client written in Rust
@@ -162,6 +164,7 @@ Adding an ansible version instead of pure BASH.
   - Disables analytics, Siri, location services, Handoff, etc.
   - User prompted at end of installation to opt-in
 - Added VM testing and validation scripts (test-vm.sh, validate-install.sh)
+- Added mcat (terminal image/video viewer) and reddix (Reddit client) to batteries included
 - Verified all commands work in macOS Tahoe (final Intel Mac version)
 - Updated documentation with new Python package management approach
 

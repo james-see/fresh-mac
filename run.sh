@@ -130,6 +130,10 @@ if [ "$full" = true ] ; then
     sudo rm -rf OPSWAT\ GEARS\ Client
     echo "now installing rainbowstream Twitter terminal client..."
     uv tool install rainbowstream
+    echo "now installing reddix, Reddit terminal client..."
+    brew install reddix
+    echo "now installing mcat, terminal image/video/markdown viewer..."
+    brew install mcat
     echo "now installing slack-term, terminal client for Slack..."
     # must go here https://github.com/erroneousboat/slack-term/wiki#running-slack-term-without-legacy-tokens to get token
     brew install slack-term

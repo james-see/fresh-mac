@@ -62,6 +62,12 @@ check_command jq
 check_command bat
 
 echo ""
+echo "BATTERIES INCLUDED TOOLS (if full install selected):"
+check_command nginx
+check_command reddix
+check_command mcat
+
+echo ""
 echo "UV TOOLS (checking uv tool list):"
 uv tool list 2>/dev/null | head -10
 
