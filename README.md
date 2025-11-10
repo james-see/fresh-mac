@@ -98,6 +98,45 @@ ALL OF CORE PLUS:
 - [SPOTIFY-TUI](https://github.com/Rigellute/spotify-tui) spotify terminal client written in Rust
 - [SPOTIFYD](https://github.com/Spotifyd/spotifyd) spotify service that you connect spotify-tui to
 
+## TESTING
+
+To test the installation in a VM before running on your main machine:
+
+### Quick Start Testing
+```bash
+# Run the test helper
+./test-vm.sh
+```
+
+### Testing Options
+
+1. **UTM (Apple Silicon Macs)** - Best for full macOS testing
+   - Install: `brew install --cask utm`
+   - Create VM with 8GB+ RAM, 60GB+ disk
+   - Install fresh macOS
+
+2. **Tart (Automated macOS VMs)** - Best for CI/CD
+   - Install: `brew install cirruslabs/cli/tart`
+   - Run: `./test-vm.sh` and choose option 2
+
+3. **OrbStack (Linux VMs)** - Best for quick script logic testing
+   - Install: `brew install --cask orbstack`
+   - Tests bash logic, not macOS-specific commands
+
+### Validation After Installation
+
+Run the validation script in your VM after installation:
+```bash
+./validate-install.sh
+```
+
+This checks:
+- All core tools installed (brew, uv, caddy, orbstack, etc.)
+- Security settings applied (firewall, FileVault, stealth mode)
+- Services running (dnscrypt-proxy, tor, privoxy if applicable)
+- Privacy settings (if enhanced privacy was enabled)
+- UI changes (dock cleared, login message set)
+
 ## HOW TO CONTRIBUTE
 
 Fork it and issue a pull request!
