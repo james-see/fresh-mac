@@ -53,6 +53,12 @@ case $CHOICE in
 esac
 brew tap homebrew/services
 if [ "$full" = true ] ; then
+    echo "installing tor and privoxy for privacy..."
+    brew install tor
+    brew install privoxy
+    brew services start tor
+    brew services start privoxy
+    sudo networksetup -setwebproxy "Wi-Fi" 127.0.0.1 8118
     echo "installing nginx..."
     brew install nginx --HEAD
     echo "installing task warrior..."
@@ -203,9 +209,6 @@ echo "fixing DNS to encrypt all of your dns resolver lookups"
 brew install dnsmasq
 brew install dnscrypt-proxy
 sudo brew services start dnscrypt-proxy
-brew install privoxy
-brew services start privoxy
-sudo networksetup -setwebproxy "Wi-Fi" 127.0.0.1 8118
 echo "turning off captive control when searching for wifi networks"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 echo "changing default screenshot location to ~/Documents/Screenshots because desktop screenshots suck..."

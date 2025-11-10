@@ -20,13 +20,10 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - [CHROMIUM](https://www.chromium.org/)
 - [CALIBRE](https://caibre-ebook.com/)
 - [ZSH](https://www.zsh.org/) & [OH-MY-ZSH](http://ohmyz.sh/)
-- [GPG TOOLS](https://gpgtools.org/)
-- [TOR](https://www.torproject.org/download/download.html.en) (brew services start tor, config in /usr/local/etc/tor/, running at 127.0.0.1:9050)
-- [PRIVOXY](http://www.privoxy.org/) (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)
 - [PYTHON 3](https://www.python.org/)
 - Python CLI tools and libraries managed via uv
 ### Security Stuff  
-- DNSCRYPT for secure DNS lookups & works with Privoxy
+- DNSCRYPT for secure DNS lookups
 - WIPE profile image to default
 - SET MESSAGE ON login to call if found for reward
 - LOCK DOWN FIREWALL (turn on stealth mode, etc.)
@@ -58,6 +55,8 @@ We use `uv` for fast, modern Python package management:
 
 ALL OF CORE PLUS:
 
+- [TOR](https://www.torproject.org/download/download.html.en) (brew services start tor, config in /usr/local/etc/tor/, running at 127.0.0.1:9050)
+- [PRIVOXY](http://www.privoxy.org/) (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)
 - [TASKWARRIOR](https://taskwarrior.org/)
 - [IMAGEMAGICK](https://www.imagemagick.org/script/index.php)
 - [BALENA ETCHER](https://www.balena.io/etcher/)
@@ -105,6 +104,8 @@ Adding an ansible version instead of pure BASH.
 - Added OrbStack as modern Docker Desktop alternative to core
 - Added Caddy web server with automatic HTTPS to core
 - Modernized installer.py to use subprocess.run() instead of deprecated call()
+- Removed legacy GPG Tools from core
+- Moved TOR and Privoxy to batteries included section (privacy-focused users)
 - Updated documentation with new Python package management approach
 
 27JUN2022: Added wipe the Dock of crapware, updated pip permissions, fixed some other M1 related stuff
