@@ -237,6 +237,71 @@ echo "turning off auto-allowing signed apps from popping through firewall..."
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
 sudo pkill -HUP socketfilterfw
+if [ "$full" = true ] ; then
+    PRIVACY_CHOICE=$(dialog --clear \
+        --backtitle "FRESH MAC - ENHANCED PRIVACY SETTINGS" \
+        --title "OPTIONAL ENHANCED PRIVACY" \
+        --yesno "Do you want to enable enhanced privacy settings?\n\nThis will:\n- Disable analytics & crash reporting to Apple\n- Disable Siri & Spotlight suggestions\n- Disable Handoff & Continuity\n- Block Safari cookies & enable Do Not Track\n- Disable location services\n- Disable Bonjour advertising\n- Enable advanced fingerprinting protection\n\nNote: Some features may be affected." \
+        18 70 \
+    2>&1 >/dev/tty)
+    
+    if [ $? -eq 0 ]; then
+        echo "Applying enhanced privacy settings..."
+        
+        echo "Disabling diagnostic data sending to Apple..."
+        sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist AutoSubmit -bool false
+        sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist ThirdPartyDataSubmit -bool false
+        
+        echo "Disabling personalized ads..."
+        defaults write com.apple.AdLib allowApplePersonalizedAdvertising -bool false
+        
+        echo "Disabling Siri..."
+        defaults write com.apple.assistant.support "Assistant Enabled" -bool false
+        
+        echo "Disabling Siri suggestions in Spotlight..."
+        defaults write com.apple.lookup.shared LookupSuggestionsDisabled -bool true
+        
+        echo "Disabling Spotlight Suggestions in Safari..."
+        defaults write com.apple.safari UniversalSearchEnabled -bool false
+        defaults write com.apple.safari SuppressSearchSuggestions -bool true
+        
+        echo "Disabling Handoff and Continuity features..."
+        defaults -currentHost write com.apple.coreservices.useractivityd ActivityAdvertisingAllowed -bool false
+        defaults -currentHost write com.apple.coreservices.useractivityd ActivityReceivingAllowed -bool false
+        
+        echo "Disabling AirDrop discovery..."
+        defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
+        
+        echo "Applying Safari privacy enhancements..."
+        defaults write com.apple.Safari BlockStoragePolicy -int 2
+        defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+        defaults write com.apple.Safari AutoFillPasswords -bool false
+        defaults write com.apple.Safari AutoFillCreditCardData -bool false
+        defaults write com.apple.Safari AdvancedFingerprintingProtection -bool true
+        
+        echo "Disabling location services..."
+        sudo defaults write /var/db/locationd/Library/Preferences/ByHost/com.apple.locationd LocationServicesEnabled -int 0
+        
+        echo "Disabling Bonjour multicast advertising..."
+        sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool true
+        
+        echo "Clearing saved Wi-Fi networks..."
+        sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.airport.preferences RememberedNetworks -array
+        
+        echo "Disabling QuickLook remote content..."
+        defaults write com.apple.QuickLookDaemon QLRemoteContentAllowed -bool false
+        
+        echo "Disabling automatic software update checks..."
+        sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool false
+        
+        echo "Disabling clipboard history in Spotlight..."
+        defaults write com.apple.Spotlight ShowClipboardHistory -bool false
+        
+        echo "Enhanced privacy settings applied!"
+    else
+        echo "Skipping enhanced privacy settings."
+    fi
+fi
 dialog --title "FINISHED" \
 --msgbox "\n Installation Completed, Enjoy Your New System\nInstalling zsh as final step" 12 70
 echo "installing zsh..."

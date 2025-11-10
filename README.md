@@ -57,6 +57,16 @@ ALL OF CORE PLUS:
 
 - [TOR](https://www.torproject.org/download/download.html.en) (brew services start tor, config in /usr/local/etc/tor/, running at 127.0.0.1:9050)
 - [PRIVOXY](http://www.privoxy.org/) (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)
+- **OPTIONAL ENHANCED PRIVACY SETTINGS** - Prompted at end of installation
+  - Disables analytics & crash reporting to Apple
+  - Disables Siri & Spotlight suggestions
+  - Disables Handoff & Continuity features
+  - Blocks Safari cookies & enables Do Not Track
+  - Disables location services
+  - Disables Bonjour advertising
+  - Enables advanced fingerprinting protection
+  - Disables clipboard history in Spotlight
+  - Clears saved Wi-Fi networks
 - [TASKWARRIOR](https://taskwarrior.org/)
 - [IMAGEMAGICK](https://www.imagemagick.org/script/index.php)
 - [BALENA ETCHER](https://www.balena.io/etcher/)
@@ -106,6 +116,11 @@ Adding an ansible version instead of pure BASH.
 - Modernized installer.py to use subprocess.run() instead of deprecated call()
 - Removed legacy GPG Tools from core
 - Moved TOR and Privoxy to batteries included section (privacy-focused users)
+- Added optional enhanced privacy settings for batteries included users
+  - 12 privacy-hardening commands compatible with macOS Tahoe
+  - Disables analytics, Siri, location services, Handoff, etc.
+  - User prompted at end of installation to opt-in
+- Verified all commands work in macOS Tahoe (final Intel Mac version)
 - Updated documentation with new Python package management approach
 
 27JUN2022: Added wipe the Dock of crapware, updated pip permissions, fixed some other M1 related stuff
