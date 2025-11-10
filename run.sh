@@ -145,6 +145,8 @@ if [ "$full" = true ] ; then
 fi
 echo "installing OrbStack (modern Docker Desktop alternative)..."
 brew install --cask orbstack
+echo "installing UTM (virtual machine manager)..."
+brew install --cask utm
 echo "installing Caddy web server..."
 brew install caddy
 echo "Removing all bs from the Dock..."

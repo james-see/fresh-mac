@@ -15,6 +15,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - [HOMEBREW](https://brew.sh)
 - [UV](https://github.com/astral-sh/uv) - Fast Python package installer and resolver
 - [ORBSTACK](https://orbstack.dev/) - Modern Docker Desktop alternative with faster containers and Linux VMs
+- [UTM](https://mac.getutm.app/) - Virtual machine manager for macOS, run Windows, Linux, and other VMs
 - [CADDY](https://caddyserver.com/) - Modern web server with automatic HTTPS
 - [TUNNELBLICK](https://www.tunnelblick.net/)
 - [CHROMIUM](https://www.chromium.org/)
@@ -151,6 +152,7 @@ Adding an ansible version instead of pure BASH.
 - Added UV for fast Python package management (10-100x faster than pip)
 - Split Python packages into CLI tools (uv tool install) and libraries (uv pip install)
 - Added OrbStack as modern Docker Desktop alternative to core
+- Added UTM virtual machine manager to core
 - Added Caddy web server with automatic HTTPS to core
 - Modernized installer.py to use subprocess.run() instead of deprecated call()
 - Removed legacy GPG Tools from core
@@ -159,6 +161,7 @@ Adding an ansible version instead of pure BASH.
   - 12 privacy-hardening commands compatible with macOS Tahoe
   - Disables analytics, Siri, location services, Handoff, etc.
   - User prompted at end of installation to opt-in
+- Added VM testing and validation scripts (test-vm.sh, validate-install.sh)
 - Verified all commands work in macOS Tahoe (final Intel Mac version)
 - Updated documentation with new Python package management approach
 

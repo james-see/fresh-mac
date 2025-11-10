@@ -74,6 +74,13 @@ else
     ((ERRORS++))
 fi
 
+if [ -d "/Applications/UTM.app" ]; then
+    echo -e "${GREEN}✓${NC} UTM is installed"
+else
+    echo -e "${RED}✗${NC} UTM is NOT installed"
+    ((ERRORS++))
+fi
+
 echo ""
 echo "SECURITY SETTINGS:"
 FIREWALL=$(sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate 2>/dev/null | grep -q "enabled" && echo "enabled" || echo "disabled")
