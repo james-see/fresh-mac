@@ -192,13 +192,13 @@ echo "installing go..."
 brew install go --HEAD
 echo "installing fav fonts..."
 cp fonts/*.ttf /Library/Fonts/
-echo "installing Chromium..."
-brew install chromium
+echo "installing Dia browser (AI-powered browser from The Browser Company)..."
+brew install --cask thebrowsercompany-dia
 echo "installing Brave..."
 brew install --cask brave-browser
-echo "installing defaultbrowser tool and setting default to Chromium..."
+echo "installing defaultbrowser tool and setting default to Dia..."
 brew install defaultbrowser
-defaultbrowser brave-browser
+defaultbrowser dia
 echo "installing etcher..."
 brew install balenaetcher
 echo "installing signal..."

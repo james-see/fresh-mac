@@ -18,7 +18,8 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - [UTM](https://mac.getutm.app/) - Virtual machine manager for macOS, run Windows, Linux, and other VMs
 - [CADDY](https://caddyserver.com/) - Modern web server with automatic HTTPS
 - [TUNNELBLICK](https://www.tunnelblick.net/)
-- [CHROMIUM](https://www.chromium.org/)
+- [DIA BROWSER](https://www.diabrowser.com/) - AI-powered browser from The Browser Company (makers of Arc) - set as default
+- [BRAVE BROWSER](https://brave.com/) - Privacy-focused browser
 - [CALIBRE](https://caibre-ebook.com/)
 - [ZSH](https://www.zsh.org/) & [OH-MY-ZSH](http://ohmyz.sh/)
 - [PYTHON 3](https://www.python.org/)
@@ -33,7 +34,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - Turn off auto-allowing signed apps from pooping/popping through firewall
 - Enforces hibernation
 - Turn off powernap BS (no, don't ping the internet assholes when my computer is asleep)
-- SET default browser to Chromium
+- SET default browser to Dia (AI-powered)
 ### Other Niceties in Core  
 - [NERD-FONTS](https://github.com/ryanoasis/nerd-fonts)
 - BAT for cat (aliased)
@@ -156,6 +157,9 @@ Adding an ansible version instead of pure BASH.
 - Added OrbStack as modern Docker Desktop alternative to core
 - Added UTM virtual machine manager to core
 - Added Caddy web server with automatic HTTPS to core
+- Replaced Chromium with Dia browser (AI-powered from The Browser Company) in core
+- Dia browser set as default (AI-powered features for productivity)
+- Added Brave browser as privacy-focused alternative
 - Modernized installer.py to use subprocess.run() instead of deprecated call()
 - Removed legacy GPG Tools from core
 - Moved TOR and Privoxy to batteries included section (privacy-focused users)
