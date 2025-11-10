@@ -10,6 +10,8 @@ else
     echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
     source ~/.zshrc
 fi
+echo "installing uv for modern Python package management..."
+brew install uv
 PHONE=${PHONE}
 brew install dialog
 brew analytics off
@@ -120,9 +122,8 @@ if [ "$full" = true ] ; then
     echo "removing extra clients as necessary..."
     sudo rm -rf OpenDNS\ Roaming\ Client
     sudo rm -rf OPSWAT\ GEARS\ Client
-    sudo chown -R "$USER" /Users/jc/Library/Caches/pip
     echo "now installing rainbowstream Twitter terminal client..."
-    pip3 install rainbowstream
+    uv tool install rainbowstream
     echo "now installing slack-term, terminal client for Slack..."
     # must go here https://github.com/erroneousboat/slack-term/wiki#running-slack-term-without-legacy-tokens to get token
     brew install slack-term
@@ -136,6 +137,10 @@ if [ "$full" = true ] ; then
     echo "installing pure prompt for zsh..."
     brew install pure
 fi
+echo "installing OrbStack (modern Docker Desktop alternative)..."
+brew install --cask orbstack
+echo "installing Caddy web server..."
+brew install caddy
 echo "Removing all bs from the Dock..."
 sudo defaults write com.apple.dock persistent-apps -array
 echo "Resetting dock..."
@@ -186,10 +191,14 @@ echo "installing etcher..."
 brew install balenaetcher
 echo "installing signal..."
 brew install signal
-echo "installing all pip packages..."
-python3 -m pip install --upgrade pip
-sudo chown -R "$USER" /Users/jc/Library/Caches/pip
-cat requirements.txt | sudo xargs -n 1 pip3 install
+echo "installing CLI tools via uv tool (isolated like pipx)..."
+while IFS= read -r tool; do
+    [[ -z "$tool" || "$tool" =~ ^# ]] && continue
+    echo "Installing tool: $tool"
+    uv tool install "$tool"
+done < requirements-tools.txt
+echo "installing Python libraries via uv pip..."
+uv pip install -r requirements-libs.txt --system
 echo "fixing DNS to encrypt all of your dns resolver lookups"
 brew install dnsmasq
 brew install dnscrypt-proxy

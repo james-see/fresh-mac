@@ -13,6 +13,9 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 
 ### Basic stuff
 - [HOMEBREW](https://brew.sh)
+- [UV](https://github.com/astral-sh/uv) - Fast Python package installer and resolver
+- [ORBSTACK](https://orbstack.dev/) - Modern Docker Desktop alternative with faster containers and Linux VMs
+- [CADDY](https://caddyserver.com/) - Modern web server with automatic HTTPS
 - [TUNNELBLICK](https://www.tunnelblick.net/)
 - [CHROMIUM](https://www.chromium.org/)
 - [CALIBRE](https://caibre-ebook.com/)
@@ -20,8 +23,8 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - [GPG TOOLS](https://gpgtools.org/)
 - [TOR](https://www.torproject.org/download/download.html.en) (brew services start tor, config in /usr/local/etc/tor/, running at 127.0.0.1:9050)
 - [PRIVOXY](http://www.privoxy.org/) (brew services start privoxy, config in /usr/local/etc/privoxy/, running at 127.0.0.1:8118)
-- [PYTHON 3 & PIP](https://www.python.org/)
-- lots of python libraries via requirements.txt
+- [PYTHON 3](https://www.python.org/)
+- Python CLI tools and libraries managed via uv
 ### Security Stuff  
 - DNSCRYPT for secure DNS lookups & works with Privoxy
 - WIPE profile image to default
@@ -43,6 +46,13 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - RVM to manage ruby versions
 - [mdcat](https://github.com/lunaryorn/mdcat) render markdown
 - parquet-tools to view parquet files and other BS like that
+
+### Python Package Management
+
+We use `uv` for fast, modern Python package management:
+- **CLI tools** (bpython, httpie, grip, etc.) installed via `uv tool install` - isolated environments like pipx, globally accessible
+- **Libraries** (pandas, flask, requests, etc.) installed via `uv pip install` - faster pip replacement
+- Benefits: Clean separation, no dependency conflicts between tools, 10-100x faster than pip
 
 ## INCLUDED BATTERIES INCLUDED
 
@@ -89,6 +99,14 @@ Adding an ansible version instead of pure BASH.
 
 ## Update Log
 
-27JUN2022 Added wipe the Dock of crapware, updated pip permissions, fixed some other M1 related stuff
+10NOV2025: Major modernization update
+- Added UV for fast Python package management (10-100x faster than pip)
+- Split Python packages into CLI tools (uv tool install) and libraries (uv pip install)
+- Added OrbStack as modern Docker Desktop alternative to core
+- Added Caddy web server with automatic HTTPS to core
+- Modernized installer.py to use subprocess.run() instead of deprecated call()
+- Updated documentation with new Python package management approach
+
+27JUN2022: Added wipe the Dock of crapware, updated pip permissions, fixed some other M1 related stuff
 
 14NOV2021: Added slack-term and rainbowstream

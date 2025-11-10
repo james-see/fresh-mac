@@ -1,0 +1,9 @@
+bpython
+grip
+httpie
+mkdocs
+pytest
+Sphinx
+twine
+youtube-dl
+
