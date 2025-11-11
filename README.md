@@ -82,6 +82,7 @@ ALL OF CORE PLUS:
 - [TMUX](https://github.com/tmux/tmux/wiki)
 - [CHARLES](https://www.charlesproxy.com/) requires one time license
 - [LITTLE SNITCH](https://www.obdev.at/products/littlesnitch/index.html) requires one time license
+- [SDKMAN!](https://sdkman.io/) - SDK Manager for Java, Kotlin, Scala, Groovy, and more JVM languages
 - [HASKELL](https://www.haskell.org/)
 - [ELIXIR](https://elixir-lang.org/)
 - [ELM](https://elm-lang.org/)
@@ -171,6 +172,10 @@ Adding an ansible version instead of pure BASH.
 - Added mcat (terminal image/video viewer) and reddix (Reddit client) to batteries included
 - Verified all commands work in macOS Tahoe (final Intel Mac version)
 - Updated documentation with new Python package management approach
+- Added SDKMAN! for Java/JVM SDK management (closes #4)
+- Fixed oh-my-zsh installation to be non-interactive (closes #2)
+  - Shell change now happens after custom config is copied
+  - Better control over installation flow
 
 27JUN2022: Added wipe the Dock of crapware, updated pip permissions, fixed some other M1 related stuff
 

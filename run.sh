@@ -95,6 +95,9 @@ if [ "$full" = true ] ; then
     brew install viddy
     echo "installing gradle and openjdk..."
     brew install gradle openjdk
+    echo "installing SDKMAN! for managing Java/JVM SDKs..."
+    curl -s "https://get.sdkman.io" | bash
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
     echo "now for some functional stuff, installing elixir..."
     brew install elixir
     echo "now installing elm..."
@@ -312,6 +315,7 @@ dialog --title "FINISHED" \
 --msgbox "\n Installation Completed, Enjoy Your New System\nInstalling zsh as final step" 12 70
 echo "installing zsh..."
 brew install zsh --upgrade
-echo "installing ohmyzsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "installing ohmyzsh (non-interactive)..."
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "oh-my-zsh installed, shell will be changed after config copy"
 

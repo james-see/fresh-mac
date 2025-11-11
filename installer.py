@@ -4,11 +4,32 @@
 import subprocess
 import sys
 import os
+from pathlib import Path
 
 os.environ['PHONE'] = str(sys.argv[1]) if len(sys.argv) > 1 else ""
+
+print("Running main installation script...")
 subprocess.run(["./run.sh"], check=True)
-subprocess.run(["mv", "$HOME/.zshrc", "$HOME/.zshrc-backup"], check=False)
-subprocess.run(["cp", "./configs/zshrc", "$HOME/.zshrc"], check=True)
-print("Setting up the new zshrc")
-subprocess.run(["exec", "zsh"])
-sys.exit("finis")
+
+print("\nSetting up custom zsh configuration...")
+home = Path.home()
+zshrc_path = home / ".zshrc"
+backup_path = home / ".zshrc-backup"
+
+# Backup existing .zshrc if it exists
+if zshrc_path.exists():
+    print(f"Backing up existing .zshrc to {backup_path}")
+    subprocess.run(["mv", str(zshrc_path), str(backup_path)], check=False)
+
+# Copy custom zshrc
+print("Copying custom zshrc configuration...")
+subprocess.run(["cp", "./configs/zshrc", str(zshrc_path)], check=True)
+
+# Change default shell to zsh
+print("\nChanging default shell to zsh...")
+zsh_path = subprocess.run(["which", "zsh"], capture_output=True, text=True).stdout.strip()
+subprocess.run(["chsh", "-s", zsh_path], check=True)
+
+print("\n✓ Installation complete!")
+print("Please restart your terminal or run: exec zsh")
+sys.exit(0)
