@@ -5,5 +5,5 @@ mkdocs
 pytest
 Sphinx
 twine
-youtube-dl
+yt-dlp
 

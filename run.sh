@@ -126,8 +126,6 @@ if [ "$full" = true ] ; then
     mv JamWifi.app /Applications
     echo "now installing Bluetility https://github.com/jnross/Bluetility..."
     brew install bluetility
-    echo "now instaling multipass to spin up ubuntu VMs quickly..."
-    brew install --cask multipass
     echo "removing extra clients as necessary..."
     sudo rm -rf OpenDNS\ Roaming\ Client
     sudo rm -rf OPSWAT\ GEARS\ Client
@@ -149,6 +147,16 @@ if [ "$full" = true ] ; then
     # must add two lines to zshrc to get pure to be prompt
     echo "installing pure prompt for zsh..."
     brew install pure
+    echo "installing Raycast (modern Spotlight replacement)..."
+    brew install --cask raycast
+    echo "installing Warp (modern terminal with AI)..."
+    brew install --cask warp
+    echo "installing Ghostty (fast terminal)..."
+    brew install --cask ghostty
+    echo "installing Tailscale (easy VPN mesh networking)..."
+    brew install --cask tailscale
+    echo "installing 1Password CLI..."
+    brew install --cask 1password-cli
 fi
 echo "installing OrbStack (modern Docker Desktop alternative)..."
 brew install --cask orbstack

@@ -168,6 +168,6 @@ wget
 wigle
 XlsxWriter
 xmlutils
-youtube-dl
+yt-dlp
 newspaper3k
 

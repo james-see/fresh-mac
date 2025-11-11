@@ -37,6 +37,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - SET default browser to Dia (AI-powered)
 ### Other Niceties in Core  
 - [NERD-FONTS](https://github.com/ryanoasis/nerd-fonts)
+- [RECTANGLE](https://rectangleapp.com/) - Window manager via keyboard shortcuts (Spectacle replacement)
 - BAT for cat (aliased)
 - EXA for ls (aliased)
 - JQ for pretty print json and sanity & sweet pipe moves
@@ -73,7 +74,6 @@ ALL OF CORE PLUS:
 - [IMAGEMAGICK](https://www.imagemagick.org/script/index.php)
 - [BALENA ETCHER](https://www.balena.io/etcher/)
 - [BARTENDER](https://www.macbartender.com) requires license but worth it IMO
-- [CODA](https://www.panic.com/coda/)
 - [PHP-FPM](https://php-fpm.org/download/)
 - [NGINX](https://nginx.org/en/download.html)
 - [MYSQL](https://dev.mysql.com/downloads/)
@@ -86,9 +86,6 @@ ALL OF CORE PLUS:
 - [HASKELL](https://www.haskell.org/)
 - [ELIXIR](https://elixir-lang.org/)
 - [ELM](https://elm-lang.org/)
-- [VIRTUALBOX](https://www.virtualbox.org/)
-- [DOCKER](https://docs.docker.com/install/)
-- [SPECTACLE](https://www.spectacleapp.com/)
 - [VAGRANT](https://www.vagrantup.com/) and VAGRANT-MANAGER
 - [RUST](https://www.rust-lang.org/)
 - [DUST](https://github.com/bootandy/dust)
@@ -100,6 +97,11 @@ ALL OF CORE PLUS:
 - [MCAT](https://github.com/Skardyy/mcat) terminal image, video, directory, and markdown viewer
 - [PROXYCHAINS](https://github.com/rofl0r/proxychains-ng) run by `proxychains4` and your command to proxy via Tor or any other web/socks proxy before you hit your destination
 - [PURE prompt](https://github.com/sindresorhus/pure) a great prompt for zsh
+- [RAYCAST](https://www.raycast.com/) modern Spotlight replacement with productivity features
+- [WARP](https://www.warp.dev/) modern terminal with AI features
+- [GHOSTTY](https://ghostty.org/) fast GPU-accelerated terminal by Mitchell Hashimoto
+- [TAILSCALE](https://tailscale.com/) easy VPN and mesh networking
+- [1PASSWORD CLI](https://developer.1password.com/docs/cli) password management from terminal
 - [SPOTIFY-TUI](https://github.com/Rigellute/spotify-tui) spotify terminal client written in Rust
 - [SPOTIFYD](https://github.com/Spotifyd/spotifyd) spotify service that you connect spotify-tui to
 
@@ -176,6 +178,19 @@ Adding an ansible version instead of pure BASH.
 - Fixed oh-my-zsh installation to be non-interactive (closes #2)
   - Shell change now happens after custom config is copied
   - Better control over installation flow
+- Modernized tool selection:
+  - Replaced youtube-dl with yt-dlp (actively maintained, faster)
+  - Removed Spectacle (archived) - Rectangle already in core
+  - Removed Docker (OrbStack in core is better)
+  - Removed VirtualBox (UTM in core is better for Apple Silicon)
+  - Removed Multipass (redundant with OrbStack + UTM)
+  - Removed Coda (discontinued)
+- Added modern productivity tools to batteries included:
+  - Raycast (modern Spotlight replacement)
+  - Warp (AI-powered terminal)
+  - Ghostty (fast GPU-accelerated terminal)
+  - Tailscale (easy VPN/mesh networking)
+  - 1Password CLI (password management from terminal)
 
 27JUN2022: Added wipe the Dock of crapware, updated pip permissions, fixed some other M1 related stuff
 
