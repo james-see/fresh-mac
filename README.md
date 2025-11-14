@@ -46,7 +46,8 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - JQ for pretty print json and sanity & sweet pipe moves
 - TREE for pretty dirs and files list views for days
 - GOLANG - because it is better than Python in every way and not as difficult as Rust
-- RVM to manage ruby versions
+- RVM to manage ruby versions (with proper build dependencies for compilation)
+- GPG command line tools (gnupg) for encryption and signing
 - [mdcat](https://github.com/lunaryorn/mdcat) render markdown
 - parquet-tools to view parquet files and other BS like that
 
@@ -169,6 +170,9 @@ Adding an ansible version instead of pure BASH.
 - Added latest OpenSSL (OpenSSL 3.x) installation to core
 - Added DNS-over-HTTPS (DoH) support via cloudflared with Cloudflare's 1.1.1.1 servers
 - Fixed Dock configuration (auto-hide, remove apps, disable desktop click reveal)
+- Fixed RVM/Ruby compilation errors by installing required build dependencies (autoconf, automake, readline, libyaml, libffi, zlib)
+- Added GPG command line tools (gnupg) to core
+- Updated zshrc to properly initialize RVM and configure build environment for Ruby compilation
 
 10NOV2025: Major modernization update
 - Added UV for fast Python package management (10-100x faster than pip)
