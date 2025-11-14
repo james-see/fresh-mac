@@ -206,6 +206,17 @@ brew install libxml2 libxslt
 brew install libtiff libjpeg webp little-cms2
 echo "installing pyenv for Python version management..."
 brew install pyenv
+# Install Python 3.12 LTS (current LTS, supported until Oct 2028)
+echo "installing Python 3.12 LTS via pyenv..."
+# pyenv will be available after shell restart, but we can set it up now
+if command -v pyenv &> /dev/null || [ -d "$HOME/.pyenv" ]; then
+    eval "$(pyenv init -)" 2>/dev/null || true
+    pyenv install 3.12 --skip-existing 2>/dev/null || \
+    echo "Python 3.12 will be installed when you run: pyenv install 3.12"
+    pyenv global 3.12 2>/dev/null || true
+else
+    echo "Note: After installation, run 'pyenv install 3.12' to install Python 3.12 LTS"
+fi
 echo "installing GPG command line tools (needed for RVM)..."
 brew install gnupg
 echo "installing Ruby/RVM build dependencies..."

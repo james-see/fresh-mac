@@ -22,7 +22,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - [BRAVE BROWSER](https://brave.com/) - Privacy-focused browser
 - [CALIBRE](https://caibre-ebook.com/)
 - [ZSH](https://www.zsh.org/) & [OH-MY-ZSH](http://ohmyz.sh/)
-- [PYTHON 3](https://www.python.org/)
+- [PYTHON 3.12 LTS](https://www.python.org/) - Current LTS version (supported until Oct 2028)
 - [PYENV](https://github.com/pyenv/pyenv) - Python version management
 - Python CLI tools and libraries managed via uv
 ### Security Stuff  
@@ -173,6 +173,10 @@ Adding an ansible version instead of pure BASH.
 - Fixed RVM/Ruby compilation errors by installing required build dependencies (autoconf, automake, readline, libyaml, libffi, zlib)
 - Added GPG command line tools (gnupg) to core
 - Updated zshrc to properly initialize RVM and configure build environment for Ruby compilation
+- Updated Python references from deprecated Python 3.7/3.5/2.7 to Python 3.12 LTS
+- Removed outdated Python paths from zshrc (Python 2.7, 3.5, 3.7 are EOL)
+- Fixed SimpleHTTPServer alias to use Python 3's http.server module
+- Added Python 3.12 LTS installation via pyenv
 
 10NOV2025: Major modernization update
 - Added UV for fast Python package management (10-100x faster than pip)

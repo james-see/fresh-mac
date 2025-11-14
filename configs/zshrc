@@ -26,7 +26,7 @@ alias ls="exa"
 alias l="exa -lahF"
 alias of="open -a Finder ."
 alias clr="clear"
-alias svr="python -m SimpleHTTPServer 8000"
+alias svr="python3 -m http.server 8000"
 alias retor="pidof tor | xargs sudo kill -HUP"
 alias cleanquote="quote | sed 's/.*“\(.*\)”.*/\1/g'"
 
@@ -36,7 +36,13 @@ bindkey '^[^[[C' emacs-forward-word
 
 # exports
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+# Add system Python user site-packages to PATH (detects current Python version)
+if command -v python3 &> /dev/null; then
+    PYTHON_VERSION=$(python3 -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')" 2>/dev/null || echo "3")
+    if [ -d "$HOME/Library/Python/$PYTHON_VERSION/bin" ]; then
+        export PATH="$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH"
+    fi
+fi
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Load RVM into a shell session *as a function* (required for RVM to work)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -79,10 +85,9 @@ stt_both  () { setTerminalText 0 $@; }
 stt_tab   () { setTerminalText 1 $@; }
 stt_title () { setTerminalText 2 $@; }
 
-export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:/usr/local/Cellar/python3/3.5.2/Frameworks/Python.framework/Versions/3.5/bin
-export PATH=$PATH:/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/bin
 export PATH="/usr/local/sbin:$PATH"
+# Python 2.7 and Python 3.5 are EOL - removed outdated paths
+# Use pyenv or system Python 3.12+ (LTS) instead
 
 # node version control
 export NVM_DIR="$HOME/.nvm"
