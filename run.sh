@@ -64,7 +64,7 @@ case $CHOICE in
         exit
     ;;
 esac
-brew tap homebrew/services
+# Note: brew services is now built into Homebrew core, no tap needed
 if [ "$full" = true ] ; then
     echo "installing tor and privoxy for privacy..."
     brew install tor
@@ -205,6 +205,30 @@ brew install portaudio
 brew link portaudio
 echo "installing visual studio code"
 brew install visual-studio-code
+echo "installing Cursor IDE..."
+# Cursor doesn't have an official Homebrew cask, so we install via DMG
+TMP_DIR=$(mktemp -d)
+ORIG_DIR=$(pwd)
+cd "$TMP_DIR" || { echo "Warning: Could not change to temp directory"; rmdir "$TMP_DIR" 2>/dev/null || true; }
+if [ -d "$TMP_DIR" ] && [ "$(pwd)" = "$TMP_DIR" ]; then
+    curl -L -o Cursor.dmg "https://www.cursor.com/downloads/latest/mac" 2>/dev/null || curl -L -o Cursor.dmg "https://downloader.cursor.sh/mac" 2>/dev/null
+    if [ -f Cursor.dmg ]; then
+        hdiutil attach Cursor.dmg -quiet -nobrowse 2>/dev/null || true
+        sleep 2
+        if [ -d "/Volumes/Cursor/Cursor.app" ]; then
+            cp -R "/Volumes/Cursor/Cursor.app" /Applications/ 2>/dev/null || true
+            hdiutil detach "/Volumes/Cursor" -quiet 2>/dev/null || true
+            echo "Cursor IDE installed successfully"
+        else
+            echo "Warning: Could not find Cursor.app in DMG"
+        fi
+        rm -f Cursor.dmg
+    else
+        echo "Warning: Could not download Cursor IDE DMG"
+    fi
+    cd "$ORIG_DIR" || true
+    rmdir "$TMP_DIR" 2>/dev/null || true
+fi
 echo "install ruby version manager and rails..."
 curl -sSL https://get.rvm.io | bash -s stable --rails
 echo "installing nerd fonts..."

@@ -100,6 +100,7 @@ ALL OF CORE PLUS:
 - [RAYCAST](https://www.raycast.com/) modern Spotlight replacement with productivity features
 - [WARP](https://www.warp.dev/) modern terminal with AI features
 - [GHOSTTY](https://ghostty.org/) fast GPU-accelerated terminal by Mitchell Hashimoto
+- [CURSOR IDE](https://cursor.com/) AI-powered code editor with advanced AI features integrated into the coding environment
 - [TAILSCALE](https://tailscale.com/) easy VPN and mesh networking
 - [1PASSWORD CLI](https://developer.1password.com/docs/cli) password management from terminal
 - [SPOTIFY-TUI](https://github.com/Rigellute/spotify-tui) spotify terminal client written in Rust
@@ -153,6 +154,13 @@ Fork it and issue a pull request!
 Adding an ansible version instead of pure BASH.
 
 ## Update Log
+
+05JAN2026: Permission handling and IDE updates
+- Added early permission prompt handling for Terminal Accessibility permissions
+  - Resets and triggers permission prompt at start of installation
+  - Prevents interruption during Dock/screenshot modifications
+- Added Cursor IDE to batteries included section (AI-powered code editor)
+- Removed deprecated homebrew/services tap (brew services now built into Homebrew core)
 
 10NOV2025: Major modernization update
 - Added UV for fast Python package management (10-100x faster than pip)
