@@ -206,7 +206,7 @@ brew install libxml2 libxslt
 brew install libtiff libjpeg webp little-cms2
 echo "installing pyenv for Python version management..."
 brew install pyenv
-echo "installing GPG command line tools..."
+echo "installing GPG command line tools (needed for RVM)..."
 brew install gnupg
 echo "installing Ruby/RVM build dependencies..."
 # RVM/Ruby compilation requires these dependencies
@@ -254,34 +254,40 @@ if [ -d "$TMP_DIR" ] && [ "$(pwd)" = "$TMP_DIR" ]; then
     rmdir "$TMP_DIR" 2>/dev/null || true
 fi
 echo "install ruby version manager and rails..."
-# Install RVM (without Rails first to avoid compilation issues)
-curl -sSL https://get.rvm.io | bash -s stable
-# Configure environment for RVM/Ruby compilation
+# Configure environment for RVM/Ruby compilation BEFORE installing RVM
 # Determine Homebrew prefix (Apple Silicon vs Intel)
 HOMEBREW_PREFIX=$(brew --prefix 2>/dev/null || echo "/usr/local")
 OPENSSL_PREFIX=$(brew --prefix openssl@3 2>/dev/null || echo "$HOMEBREW_PREFIX/opt/openssl@3")
 # Set up build environment variables for Ruby compilation
 export PATH="$OPENSSL_PREFIX/bin:$PATH"
-export LDFLAGS="-L$OPENSSL_PREFIX/lib $LDFLAGS"
-export CPPFLAGS="-I$OPENSSL_PREFIX/include $CPPFLAGS"
-export PKG_CONFIG_PATH="$OPENSSL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LDFLAGS="-L$OPENSSL_PREFIX/lib ${LDFLAGS:-}"
+export CPPFLAGS="-I$OPENSSL_PREFIX/include ${CPPFLAGS:-}"
+export PKG_CONFIG_PATH="$OPENSSL_PREFIX/lib/pkgconfig:${PKG_CONFIG_PATH:-}"
 # Also add readline, zlib, libyaml paths
 READLINE_PREFIX=$(brew --prefix readline 2>/dev/null || echo "$HOMEBREW_PREFIX/opt/readline")
 ZLIB_PREFIX=$(brew --prefix zlib 2>/dev/null || echo "$HOMEBREW_PREFIX/opt/zlib")
 LIBYAML_PREFIX=$(brew --prefix libyaml 2>/dev/null || echo "$HOMEBREW_PREFIX/opt/libyaml")
 export LDFLAGS="-L$READLINE_PREFIX/lib -L$ZLIB_PREFIX/lib -L$LIBYAML_PREFIX/lib $LDFLAGS"
 export CPPFLAGS="-I$READLINE_PREFIX/include -I$ZLIB_PREFIX/include -I$LIBYAML_PREFIX/include $CPPFLAGS"
-# Install Ruby via RVM with proper dependencies (will be available after shell restart)
+# Install RVM (GPG should already be installed)
+curl -sSL https://get.rvm.io | bash -s stable
+# Configure RVM to use OpenSSL 3 for Ruby compilation
 if [ -d "$HOME/.rvm" ]; then
-    echo "RVM installed successfully. Ruby will be installed on next shell session."
-    echo "To install Ruby manually, run: rvm install ruby --latest"
-    echo "Or let RVM install it automatically when you open a new terminal."
+    echo "Configuring RVM to use OpenSSL 3..."
+    # Create RVM config to use OpenSSL 3
+    mkdir -p "$HOME/.rvm/user"
+    echo "rvm_configure_flags+=(--with-openssl-dir=$OPENSSL_PREFIX)" > "$HOME/.rvm/user/db"
+    echo "RVM installed successfully. Ruby installation will use OpenSSL 3."
+    echo "Note: Ruby will be installed when you open a new terminal or run: rvm install ruby --latest"
 else
     echo "Warning: RVM installation may have failed."
 fi
 echo "installing nerd fonts..."
-brew tap homebrew/cask-fonts
-brew install font-hack-nerd-font
+# homebrew/cask-fonts was deprecated, fonts are now in homebrew/cask-fonts or use direct install
+brew install --cask font-hack-nerd-font 2>/dev/null || \
+brew tap homebrew/cask-fonts 2>/dev/null || true
+brew install --cask font-hack-nerd-font 2>/dev/null || \
+echo "Warning: Could not install font-hack-nerd-font via Homebrew. Fonts will be installed from local fonts directory."
 echo "installing iterm2..."
 brew install iterm2
 echo "installing go..."
