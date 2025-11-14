@@ -329,12 +329,12 @@ brew install openssl@3
 # Link OpenSSL to make it available system-wide
 brew link --force openssl@3 2>/dev/null || true
 echo "fixing DNS to encrypt all of your dns resolver lookups"
-brew install dnsmasq
+# Install dnscrypt-proxy for DNSCrypt encryption (primary DNS encryption)
 brew install dnscrypt-proxy
 # Install cloudflared for DNS-over-HTTPS (DoH) support
 echo "installing cloudflared for DNS-over-HTTPS (DoH)..."
 brew install cloudflare/cloudflare/cloudflared
-# Configure cloudflared for DoH (runs on port 5054, will be used as upstream or alternative)
+# Configure cloudflared for DoH (runs on port 5054, backup/alternative to dnscrypt-proxy)
 sudo mkdir -p /etc/cloudflared
 sudo tee /etc/cloudflared/config.yaml > /dev/null <<EOF
 proxy-dns: true
