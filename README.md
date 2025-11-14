@@ -26,7 +26,9 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - [PYENV](https://github.com/pyenv/pyenv) - Python version management
 - Python CLI tools and libraries managed via uv
 ### Security Stuff  
+- LATEST OPENSSL (OpenSSL 3.x) for modern cryptographic support
 - DNSCRYPT for secure DNS lookups
+- DNS-OVER-HTTPS (DoH) via cloudflared with Cloudflare's 1.1.1.1 servers
 - WIPE profile image to default
 - SET MESSAGE ON login to call if found for reward
 - LOCK DOWN FIREWALL (turn on stealth mode, etc.)
@@ -164,6 +166,9 @@ Adding an ansible version instead of pure BASH.
 - Removed deprecated homebrew/services tap (brew services now built into Homebrew core)
 - Added pyenv to core for Python version management
 - Fixed pyenv command not found error in zshrc (made configuration conditional)
+- Added latest OpenSSL (OpenSSL 3.x) installation to core
+- Added DNS-over-HTTPS (DoH) support via cloudflared with Cloudflare's 1.1.1.1 servers
+- Fixed Dock configuration (auto-hide, remove apps, disable desktop click reveal)
 
 10NOV2025: Major modernization update
 - Added UV for fast Python package management (10-100x faster than pip)

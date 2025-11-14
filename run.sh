@@ -275,10 +275,39 @@ while IFS= read -r tool; do
 done < requirements-tools.txt
 echo "installing Python libraries via uv pip..."
 uv pip install -r requirements-libs.txt --system
+echo "installing latest OpenSSL..."
+brew install openssl@3
+# Link OpenSSL to make it available system-wide
+brew link --force openssl@3 2>/dev/null || true
 echo "fixing DNS to encrypt all of your dns resolver lookups"
 brew install dnsmasq
 brew install dnscrypt-proxy
+# Install cloudflared for DNS-over-HTTPS (DoH) support
+echo "installing cloudflared for DNS-over-HTTPS (DoH)..."
+brew install cloudflare/cloudflare/cloudflared
+# Configure cloudflared for DoH (runs on port 5054, will be used as upstream or alternative)
+sudo mkdir -p /etc/cloudflared
+sudo tee /etc/cloudflared/config.yaml > /dev/null <<EOF
+proxy-dns: true
+proxy-dns-port: 5054
+proxy-dns-address: 127.0.0.1
+proxy-dns-upstream:
+  - https://1.1.1.1/dns-query
+  - https://1.0.0.1/dns-query
+  - https://2606:4700:4700::1111/dns-query
+  - https://2606:4700:4700::1001/dns-query
+EOF
+# Install cloudflared as a service
+sudo cloudflared service install 2>/dev/null || true
+sudo brew services start cloudflared 2>/dev/null || true
 sudo brew services start dnscrypt-proxy
+# Configure system to use local DNS proxy (dnscrypt-proxy on 127.0.0.1)
+# Get primary network interface
+PRIMARY_INTERFACE=$(networksetup -listallnetworkservices | grep -E "^(Wi-Fi|Ethernet)" | head -n1 | sed 's/.*: //' || echo "Wi-Fi")
+if [ -n "$PRIMARY_INTERFACE" ]; then
+    echo "Configuring DNS for $PRIMARY_INTERFACE to use encrypted DNS..."
+    sudo networksetup -setdnsservers "$PRIMARY_INTERFACE" 127.0.0.1 2>/dev/null || true
+fi
 echo "turning off captive control when searching for wifi networks"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 echo "changing default screenshot location to ~/Documents/Screenshots because desktop screenshots suck..."
