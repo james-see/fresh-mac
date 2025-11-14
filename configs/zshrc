@@ -15,7 +15,7 @@ if [ -d "$ZSH" ] && [ -f "$ZSH/oh-my-zsh.sh" ]; then
     source $ZSH/oh-my-zsh.sh
 else
     echo "Warning: oh-my-zsh not found. Install it with:"
-    echo "  sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
+    echo "  sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
 fi
 export LANG=en_US.UTF-8
 

@@ -504,7 +504,7 @@ if host raw.githubusercontent.com >/dev/null 2>&1 || \
     RETRY_COUNT=0
     INSTALLED=false
     while [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$INSTALLED" = false ]; do
-        if RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 2>/dev/null; then
+        if RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 2>/dev/null; then
             INSTALLED=true
             echo "oh-my-zsh installed successfully"
         else
@@ -520,12 +520,12 @@ if host raw.githubusercontent.com >/dev/null 2>&1 || \
     elif [ "$INSTALLED" = false ]; then
         echo "Warning: oh-my-zsh installation failed after $MAX_RETRIES attempts"
         echo "You can install it manually later with:"
-        echo "  sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
+        echo "  sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
     fi
 else
     echo "Warning: Cannot resolve raw.githubusercontent.com - DNS may not be working"
     echo "Skipping oh-my-zsh installation. Install manually after DNS is working:"
-    echo "  sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
+    echo "  sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
 fi
 echo "Shell will be changed after config copy"
 
