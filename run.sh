@@ -190,6 +190,8 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "
 echo "Installing lib dependancies for python packages..."
 brew install libxml2 libxslt
 brew install libtiff libjpeg webp little-cms2
+echo "installing pyenv for Python version management..."
+brew install pyenv
 echo "installing tree for pretty trees directories..."
 brew install tree
 echo "install jq to display json in a pretty way..."

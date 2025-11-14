@@ -23,6 +23,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - [CALIBRE](https://caibre-ebook.com/)
 - [ZSH](https://www.zsh.org/) & [OH-MY-ZSH](http://ohmyz.sh/)
 - [PYTHON 3](https://www.python.org/)
+- [PYENV](https://github.com/pyenv/pyenv) - Python version management
 - Python CLI tools and libraries managed via uv
 ### Security Stuff  
 - DNSCRYPT for secure DNS lookups
@@ -161,6 +162,8 @@ Adding an ansible version instead of pure BASH.
   - Prevents interruption during Dock/screenshot modifications
 - Added Cursor IDE to batteries included section (AI-powered code editor)
 - Removed deprecated homebrew/services tap (brew services now built into Homebrew core)
+- Added pyenv to core for Python version management
+- Fixed pyenv command not found error in zshrc (made configuration conditional)
 
 10NOV2025: Major modernization update
 - Added UV for fast Python package management (10-100x faster than pip)
