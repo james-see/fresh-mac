@@ -1,4 +1,17 @@
 #!/bin/bash
+echo "Granting Terminal necessary permissions for system modifications..."
+echo "This will trigger a macOS permission prompt - please click 'Allow' when prompted."
+# Reset Accessibility permissions for Terminal to trigger prompt early (if previously denied)
+sudo tccutil reset Accessibility com.apple.Terminal 2>/dev/null || true
+# Trigger permission prompt by attempting to control Dock (requires Accessibility permission)
+# Using osascript to interact with Dock will trigger the prompt if not already granted
+osascript -e 'tell application "System Events" to tell process "Dock" to get name of every window' >/dev/null 2>&1 || true
+# Small delay to allow prompt to appear
+sleep 2
+echo "If you see a permission prompt above, please click 'Allow' to continue."
+echo "Waiting 5 seconds for you to grant permissions..."
+sleep 5
+echo ""
 echo "installing xcode tools..."
 xcode-select --install
 echo "checking and installing homebrew as necessary..."
