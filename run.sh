@@ -177,8 +177,22 @@ echo "installing UTM (virtual machine manager)..."
 brew install --cask utm
 echo "installing Caddy web server..."
 brew install caddy
-echo "Removing all bs from the Dock..."
-sudo defaults write com.apple.dock persistent-apps -array
+echo "Configuring Dock settings..."
+# Enable auto-hide dock
+defaults write com.apple.dock autohide -bool true
+# Remove all apps from dock
+defaults write com.apple.dock persistent-apps -array
+# Disable hot corners that might interfere
+defaults write com.apple.dock wvous-tl-corner -int 0
+defaults write com.apple.dock wvous-tr-corner -int 0
+defaults write com.apple.dock wvous-bl-corner -int 0
+defaults write com.apple.dock wvous-br-corner -int 0
+# Disable click wallpaper to reveal desktop (macOS Sonoma+) - try multiple methods
+defaults write com.apple.dock click-to-reveal-desktop -bool false 2>/dev/null || true
+# Disable Stage Manager desktop reveal (macOS Ventura/Sonoma+)
+defaults write com.apple.WindowManager click-to-reveal-desktop -bool false 2>/dev/null || true
+# Alternative method for disabling desktop reveal on click
+defaults write com.apple.dock showDesktopOnClick -bool false 2>/dev/null || true
 echo "Resetting dock..."
 killall Dock
 echo "Installing jpeg optim..."
@@ -278,7 +292,8 @@ sudo pmset -a destroyfvkeyonstandby 1
 echo "enforcing hibernation..."
 sudo pmset -a hibernatemode 3
 echo "changing autohide speed to instant for the dock..."
-defaults write com.apple.Dock autohide-delay -float 0.0001; killall Dock
+defaults write com.apple.dock autohide-delay -float 0.0001
+killall Dock
 echo "modifying standby and nap settings, turning off powernap etc..."
 sudo pmset -a powernap 0
 sudo pmset -a standby 0
