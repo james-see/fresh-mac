@@ -318,6 +318,8 @@ brew install balenaetcher
 echo "installing signal..."
 brew install signal
 echo "installing CLI tools via uv tool (isolated like pipx)..."
+# Add uv tools bin directory to PATH to prevent warnings
+export PATH="$HOME/.local/bin:$PATH"
 while IFS= read -r tool; do
     [[ -z "$tool" || "$tool" =~ ^# ]] && continue
     echo "Installing tool: $tool"
