@@ -351,15 +351,50 @@ proxy-dns-upstream:
 EOF
 # Install cloudflared as a service
 sudo cloudflared service install 2>/dev/null || true
-sudo brew services start cloudflared 2>/dev/null || true
+# Start dnscrypt-proxy service first
 sudo brew services start dnscrypt-proxy
+# Wait a moment for dnscrypt-proxy to start
+sleep 3
 # Configure system to use local DNS proxy (dnscrypt-proxy on 127.0.0.1)
 # Get primary network interface
 PRIMARY_INTERFACE=$(networksetup -listallnetworkservices | grep -E "^(Wi-Fi|Ethernet)" | head -n1 | sed 's/.*: //' || echo "Wi-Fi")
 if [ -n "$PRIMARY_INTERFACE" ]; then
     echo "Configuring DNS for $PRIMARY_INTERFACE to use encrypted DNS..."
     sudo networksetup -setdnsservers "$PRIMARY_INTERFACE" 127.0.0.1 2>/dev/null || true
+    # Wait for DNS configuration to take effect
+    sleep 2
+    # Test DNS resolution - try multiple times with fallback
+    echo "Testing DNS resolution..."
+    DNS_WORKING=false
+    for i in {1..5}; do
+        if host raw.githubusercontent.com 127.0.0.1 >/dev/null 2>&1 || \
+           dig @127.0.0.1 raw.githubusercontent.com >/dev/null 2>&1 || \
+           nslookup raw.githubusercontent.com 127.0.0.1 >/dev/null 2>&1; then
+            DNS_WORKING=true
+            echo "DNS resolution working!"
+            break
+        fi
+        echo "DNS test attempt $i failed, waiting..."
+        sleep 2
+    done
+    # If DNS still not working, add fallback DNS servers
+    if [ "$DNS_WORKING" = false ]; then
+        echo "Warning: Local DNS proxy not responding, adding fallback DNS servers..."
+        sudo networksetup -setdnsservers "$PRIMARY_INTERFACE" 127.0.0.1 1.1.1.1 8.8.8.8 2>/dev/null || true
+        sleep 2
+        # Test again with fallback
+        if host raw.githubusercontent.com >/dev/null 2>&1 || \
+           dig raw.githubusercontent.com >/dev/null 2>&1 || \
+           nslookup raw.githubusercontent.com >/dev/null 2>&1; then
+            echo "DNS resolution working with fallback servers!"
+        else
+            echo "Warning: DNS resolution may still have issues. Some downloads may fail."
+        fi
+    fi
 fi
+# Start cloudflared as backup (runs on port 5054)
+sudo cloudflared service install 2>/dev/null || true
+sudo brew services start cloudflared 2>/dev/null || true
 echo "turning off captive control when searching for wifi networks"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 echo "changing default screenshot location to ~/Documents/Screenshots because desktop screenshots suck..."
@@ -459,14 +494,37 @@ dialog --title "FINISHED" \
 echo "installing zsh..."
 brew install zsh
 echo "installing ohmyzsh (non-interactive)..."
-# Install oh-my-zsh with retry logic for DNS issues
-if RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 2>/dev/null; then
-    echo "oh-my-zsh installed successfully"
-elif [ -d "$HOME/.oh-my-zsh" ]; then
-    echo "oh-my-zsh directory exists, may have been installed previously"
+# Test DNS resolution before attempting download
+if host raw.githubusercontent.com >/dev/null 2>&1 || \
+   dig raw.githubusercontent.com >/dev/null 2>&1 || \
+   nslookup raw.githubusercontent.com >/dev/null 2>&1; then
+    echo "DNS resolution confirmed, downloading oh-my-zsh..."
+    # Install oh-my-zsh with retry logic
+    MAX_RETRIES=3
+    RETRY_COUNT=0
+    INSTALLED=false
+    while [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$INSTALLED" = false ]; do
+        if RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 2>/dev/null; then
+            INSTALLED=true
+            echo "oh-my-zsh installed successfully"
+        else
+            RETRY_COUNT=$((RETRY_COUNT + 1))
+            if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                echo "Installation attempt $RETRY_COUNT failed, retrying in 3 seconds..."
+                sleep 3
+            fi
+        fi
+    done
+    if [ "$INSTALLED" = false ] && [ -d "$HOME/.oh-my-zsh" ]; then
+        echo "oh-my-zsh directory exists, may have been installed previously"
+    elif [ "$INSTALLED" = false ]; then
+        echo "Warning: oh-my-zsh installation failed after $MAX_RETRIES attempts"
+        echo "You can install it manually later with:"
+        echo "  sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
+    fi
 else
-    echo "Warning: oh-my-zsh installation failed (likely DNS/network issue)"
-    echo "You can install it manually later with:"
+    echo "Warning: Cannot resolve raw.githubusercontent.com - DNS may not be working"
+    echo "Skipping oh-my-zsh installation. Install manually after DNS is working:"
     echo "  sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
 fi
 echo "Shell will be changed after config copy"
