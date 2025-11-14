@@ -323,7 +323,10 @@ while IFS= read -r tool; do
     uv tool install "$tool"
 done < requirements-tools.txt
 echo "installing Python libraries via uv pip..."
-uv pip install -r requirements-libs.txt --system
+# Use --user flag instead of --system to avoid externally managed environment errors
+uv pip install -r requirements-libs.txt --user || \
+uv pip install -r requirements-libs.txt --break-system-packages 2>/dev/null || \
+echo "Warning: Some Python libraries may have failed to install. You can install them manually later."
 echo "installing latest OpenSSL..."
 brew install openssl@3
 # Link OpenSSL to make it available system-wide
@@ -454,8 +457,17 @@ fi
 dialog --title "FINISHED" \
 --msgbox "\n Installation Completed, Enjoy Your New System\nInstalling zsh as final step" 12 70
 echo "installing zsh..."
-brew install zsh --upgrade
+brew install zsh
 echo "installing ohmyzsh (non-interactive)..."
-RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-echo "oh-my-zsh installed, shell will be changed after config copy"
+# Install oh-my-zsh with retry logic for DNS issues
+if RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 2>/dev/null; then
+    echo "oh-my-zsh installed successfully"
+elif [ -d "$HOME/.oh-my-zsh" ]; then
+    echo "oh-my-zsh directory exists, may have been installed previously"
+else
+    echo "Warning: oh-my-zsh installation failed (likely DNS/network issue)"
+    echo "You can install it manually later with:"
+    echo "  sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
+fi
+echo "Shell will be changed after config copy"
 

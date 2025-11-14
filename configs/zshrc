@@ -10,8 +10,13 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
 plugins=(git vscode taskwarrior rand-quote redis-cli)
 
-# oh my zsh stuff
-source $ZSH/oh-my-zsh.sh
+# oh my zsh stuff (only source if oh-my-zsh is installed)
+if [ -d "$ZSH" ] && [ -f "$ZSH/oh-my-zsh.sh" ]; then
+    source $ZSH/oh-my-zsh.sh
+else
+    echo "Warning: oh-my-zsh not found. Install it with:"
+    echo "  sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
+fi
 export LANG=en_US.UTF-8
 
 # pure prompt init (brew install pure)
@@ -36,6 +41,10 @@ bindkey '^[^[[C' emacs-forward-word
 
 # exports
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+# Add uv tools bin directory to PATH
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
 # Add system Python user site-packages to PATH (detects current Python version)
 if command -v python3 &> /dev/null; then
     PYTHON_VERSION=$(python3 -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')" 2>/dev/null || echo "3")
