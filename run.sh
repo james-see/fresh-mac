@@ -302,7 +302,8 @@ echo "Warning: Could not install font-hack-nerd-font via Homebrew. Fonts will be
 echo "installing iterm2..."
 brew install iterm2
 echo "installing go..."
-brew install go --HEAD
+# Install stable Go version (not --HEAD which builds from source and can fail)
+brew install go
 echo "installing fav fonts..."
 cp fonts/*.ttf /Library/Fonts/
 echo "installing Dia browser (AI-powered browser from The Browser Company)..."

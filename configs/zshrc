@@ -72,10 +72,17 @@ if command -v brew &> /dev/null; then
     fi
 fi
 export PATH="$PATH:$HOME/bin" # added sculpin
+# Go configuration (dynamic for Apple Silicon and Intel Macs)
 export GOPATH=$HOME/golang
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+# Set GOROOT based on Homebrew prefix (works for both Apple Silicon and Intel)
+if command -v brew &> /dev/null; then
+    HOMEBREW_PREFIX=$(brew --prefix 2>/dev/null || echo "/usr/local")
+    if [ -d "$HOMEBREW_PREFIX/opt/go/libexec" ]; then
+        export GOROOT="$HOMEBREW_PREFIX/opt/go/libexec"
+        export PATH="$PATH:$GOROOT/bin"
+    fi
+fi
+export PATH="$PATH:$GOPATH/bin"
 export SLUGIFY_USES_TEXT_UNIDECODE=yes
 
 # iTerm2 tab titles
