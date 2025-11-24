@@ -199,6 +199,8 @@ echo "Installing jpeg optim..."
 brew install jpegoptim
 echo "Installing rectangle window manager via shortcut keys (spectacle replacement)..."
 brew install --cask rectangle
+echo "Installing BetterDisplay for flexible HiDPI scaling and display management..."
+brew install --cask betterdisplay
 echo "Setting message for login screen..."
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Please call or text ${PHONE} for reward"
 echo "Installing lib dependancies for python packages..."

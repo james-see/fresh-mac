@@ -41,6 +41,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 ### Other Niceties in Core  
 - [NERD-FONTS](https://github.com/ryanoasis/nerd-fonts)
 - [RECTANGLE](https://rectangleapp.com/) - Window manager via keyboard shortcuts (Spectacle replacement)
+- [BETTERDISPLAY](https://github.com/waydabber/BetterDisplay) - Display management with flexible HiDPI scaling, XDR/HDR brightness, DDC control, virtual screens
 - BAT for cat (aliased)
 - EXA for ls (aliased)
 - JQ for pretty print json and sanity & sweet pipe moves
@@ -158,6 +159,10 @@ Fork it and issue a pull request!
 Adding an ansible version instead of pure BASH.
 
 ## Update Log
+
+24NOV2025: Added BetterDisplay for display management
+- Added BetterDisplay to core installation (flexible HiDPI scaling, XDR/HDR brightness control)
+- Enhanced display management capabilities with DDC control and virtual screens
 
 05JAN2026: Permission handling and IDE updates
 - Added early permission prompt handling for Terminal Accessibility permissions
