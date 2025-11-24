@@ -306,6 +306,10 @@ brew install iterm2
 echo "installing go..."
 # Install stable Go version (not --HEAD which builds from source and can fail)
 brew install go
+echo "installing weatherornot CLI weather app..."
+# Ensure GOPATH/bin is in PATH for go install
+export PATH="$HOME/go/bin:$PATH"
+go install github.com/james-see/weatherornot/cmd/weatherornot@latest
 echo "installing fav fonts..."
 cp fonts/*.ttf /Library/Fonts/
 echo "installing Dia browser (AI-powered browser from The Browser Company)..."
