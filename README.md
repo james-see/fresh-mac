@@ -47,6 +47,7 @@ Simply run `git clone https://github.com/jamesacampbell/fresh-mac.git` and then 
 - JQ for pretty print json and sanity & sweet pipe moves
 - TREE for pretty dirs and files list views for days
 - GOLANG - because it is better than Python in every way and not as difficult as Rust
+- [WEATHERORNOT](https://github.com/james-see/weatherornot) - Beautiful terminal weather CLI with ASCII art and charts (requires free [OpenWeatherMap API key](https://openweathermap.org/api))
 - RVM to manage ruby versions (with proper build dependencies for compilation)
 - GPG command line tools (gnupg) for encryption and signing
 - [mdcat](https://github.com/lunaryorn/mdcat) render markdown
@@ -160,9 +161,10 @@ Adding an ansible version instead of pure BASH.
 
 ## Update Log
 
-24NOV2025: Added BetterDisplay for display management
+24NOV2025: Added BetterDisplay and weatherornot
 - Added BetterDisplay to core installation (flexible HiDPI scaling, XDR/HDR brightness control)
 - Enhanced display management capabilities with DDC control and virtual screens
+- Added weatherornot CLI weather app with ASCII art and temperature graphs (requires free OpenWeatherMap API key)
 
 05JAN2026: Permission handling and IDE updates
 - Added early permission prompt handling for Terminal Accessibility permissions
